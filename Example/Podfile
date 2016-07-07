@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZoomTransitioning_Example' do
+  pod 'ZoomTransitioning', :path => '../'
+
+  target 'ZoomTransitioning_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

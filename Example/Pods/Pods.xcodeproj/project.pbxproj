@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1895DCA10BC30EED2DC83F804CC3C680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		691D3A258227D6B94FD217904DA19515 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		7E09D78CD75DBCBD3245888E7BDAE023 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD0C6684B23B794AEF8A7EF557C9DC /* ReplaceMe.swift */; };
+		909E2CE60FF15C2EE01783F9CCBFE8FA /* Pods-ZoomTransitioning_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B012E375B337040182F95789F78B881 /* Pods-ZoomTransitioning_Tests-dummy.m */; };
+		A4D4D912F1A34D2CCFE4B6C0CF9B2493 /* Pods-ZoomTransitioning_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A70C0983191EE3926D4B26FAD367626 /* Pods-ZoomTransitioning_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C42DC0B7FF79713747E63F45636D839E /* ZoomTransitioning-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F2A6AC66DBD9B5C95201C8368613E9 /* ZoomTransitioning-dummy.m */; };
+		C870818BA56218E85D562462940F2BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		D746EF623D2371AD016971F48328CD3A /* Pods-ZoomTransitioning_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E948E9E7EEE0CD086AD9A5509A98799 /* Pods-ZoomTransitioning_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE774D5E4BE2F0C1EA9F6C6EBBE85E9C /* Pods-ZoomTransitioning_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B10708A342F2E55FEB0329252A669A /* Pods-ZoomTransitioning_Example-dummy.m */; };
+		F4CDCB9854079DA657CB22C08B6904E4 /* ZoomTransitioning-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A86EE26675133F285066B3393AB2BA /* ZoomTransitioning-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AFABA7BD00E6D2A1868EA1D15C5A595 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDDEDA8B652319276E768E1B2220B68F;
+			remoteInfo = ZoomTransitioning;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		047080577E0923CF60A04E787C68A34A /* Pods-ZoomTransitioning_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZoomTransitioning_Tests.modulemap"; sourceTree = "<group>"; };
+		0767506209135163806B8C104E1AE07B /* ZoomTransitioning.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ZoomTransitioning.modulemap; sourceTree = "<group>"; };
+		0AFD0C6684B23B794AEF8A7EF557C9DC /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		0B012E375B337040182F95789F78B881 /* Pods-ZoomTransitioning_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZoomTransitioning_Tests-dummy.m"; sourceTree = "<group>"; };
+		1A70C0983191EE3926D4B26FAD367626 /* Pods-ZoomTransitioning_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZoomTransitioning_Example-umbrella.h"; sourceTree = "<group>"; };
+		324A44E14B55F963B5554F34F868404A /* Pods-ZoomTransitioning_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZoomTransitioning_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		34CA9B155A89294B62918DD7F2543606 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42F2A6AC66DBD9B5C95201C8368613E9 /* ZoomTransitioning-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZoomTransitioning-dummy.m"; sourceTree = "<group>"; };
+		503739D4E8E02B2360BB63E029639E0C /* Pods-ZoomTransitioning_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZoomTransitioning_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		50A86EE26675133F285066B3393AB2BA /* ZoomTransitioning-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZoomTransitioning-umbrella.h"; sourceTree = "<group>"; };
+		52F992ED779DBEEDCAE34A27779243F5 /* ZoomTransitioning.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZoomTransitioning.xcconfig; sourceTree = "<group>"; };
+		60B458BC5A7C835D14EB08FA0EEF2A26 /* Pods-ZoomTransitioning_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZoomTransitioning_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		60C1804B37D9ED34AD393313DAF4BC0E /* ZoomTransitioning-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZoomTransitioning-prefix.pch"; sourceTree = "<group>"; };
+		6B04FA4E54B39EF8F5668C564FC3CAED /* Pods_ZoomTransitioning_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomTransitioning_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D7C5843F5BFA665F28EE18BDEBB61AE /* Pods_ZoomTransitioning_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomTransitioning_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E948E9E7EEE0CD086AD9A5509A98799 /* Pods-ZoomTransitioning_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZoomTransitioning_Tests-umbrella.h"; sourceTree = "<group>"; };
+		81AB69A2ACBBACC39F585D2F164E23F2 /* Pods-ZoomTransitioning_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZoomTransitioning_Example-resources.sh"; sourceTree = "<group>"; };
+		8B8BA30EF8DF8FD96FC8542E054D22A2 /* Pods-ZoomTransitioning_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZoomTransitioning_Example.modulemap"; sourceTree = "<group>"; };
+		8ECECC07EA9E030F7DFABBD8D7F8F801 /* Pods-ZoomTransitioning_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZoomTransitioning_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		90BD72B70E615845C4C01311CACD1E37 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9193446B778099831C43D5CAA7853413 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9787EE7F82BE1A115E18253FAD14A907 /* ZoomTransitioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZoomTransitioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55E34A38F31A6F7B37F9EBF6D0E4C80 /* Pods-ZoomTransitioning_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZoomTransitioning_Tests-resources.sh"; sourceTree = "<group>"; };
+		A96C12FAB650560006C35E6D35574632 /* Pods-ZoomTransitioning_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZoomTransitioning_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DAF127EFEA7B3EEAB32AF64123D1D852 /* Pods-ZoomTransitioning_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZoomTransitioning_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DC339785F27E2896CDF5456DE586DE28 /* Pods-ZoomTransitioning_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZoomTransitioning_Example-frameworks.sh"; sourceTree = "<group>"; };
+		DE2349DACD55560E15B241F59BAE4A0A /* Pods-ZoomTransitioning_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZoomTransitioning_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		F5B10708A342F2E55FEB0329252A669A /* Pods-ZoomTransitioning_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZoomTransitioning_Example-dummy.m"; sourceTree = "<group>"; };
+		F65CDBFD342B0520AFCFA52B5E5169D0 /* Pods-ZoomTransitioning_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZoomTransitioning_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0DD42D25968D05ED667E7C5B6B60A4 /* Pods-ZoomTransitioning_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZoomTransitioning_Example.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AD3110FF8BD6575FA085AFC13D65DF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691D3A258227D6B94FD217904DA19515 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405D3A5DEEDE9429F995C92BB8402D5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C870818BA56218E85D562462940F2BC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36AAC90E29E451ACB72B9B880D9436F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1895DCA10BC30EED2DC83F804CC3C680 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D8D3EB44C37D086673FA76574F60FB2 /* Pods-ZoomTransitioning_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9193446B778099831C43D5CAA7853413 /* Info.plist */,
+				047080577E0923CF60A04E787C68A34A /* Pods-ZoomTransitioning_Tests.modulemap */,
+				503739D4E8E02B2360BB63E029639E0C /* Pods-ZoomTransitioning_Tests-acknowledgements.markdown */,
+				DAF127EFEA7B3EEAB32AF64123D1D852 /* Pods-ZoomTransitioning_Tests-acknowledgements.plist */,
+				0B012E375B337040182F95789F78B881 /* Pods-ZoomTransitioning_Tests-dummy.m */,
+				DE2349DACD55560E15B241F59BAE4A0A /* Pods-ZoomTransitioning_Tests-frameworks.sh */,
+				A55E34A38F31A6F7B37F9EBF6D0E4C80 /* Pods-ZoomTransitioning_Tests-resources.sh */,
+				7E948E9E7EEE0CD086AD9A5509A98799 /* Pods-ZoomTransitioning_Tests-umbrella.h */,
+				F65CDBFD342B0520AFCFA52B5E5169D0 /* Pods-ZoomTransitioning_Tests.debug.xcconfig */,
+				8ECECC07EA9E030F7DFABBD8D7F8F801 /* Pods-ZoomTransitioning_Tests.release.xcconfig */,
+			);
+			name = "Pods-ZoomTransitioning_Tests";
+			path = "Target Support Files/Pods-ZoomTransitioning_Tests";
+			sourceTree = "<group>";
+		};
+		23BFFBF8D23F2BDD9E3E57F15D62947F /* ZoomTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				D81AF383C134456DF96802F1F2DC4CCC /* Support Files */,
+				AF4AC70C838408B3ECA1394ABB6FBD82 /* ZoomTransitioning */,
+			);
+			name = ZoomTransitioning;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				B128BB2E29B8971F7FF6E9BFB49FD6EA /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				F5D8029011DAF388B8EA45011F8C88A7 /* Products */,
+				ED2164D13E1C0034DEB566C65A90299E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A227A0BEA0D323562312CC48C3B7B45B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0AFD0C6684B23B794AEF8A7EF557C9DC /* ReplaceMe.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AF4AC70C838408B3ECA1394ABB6FBD82 /* ZoomTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				A227A0BEA0D323562312CC48C3B7B45B /* Classes */,
+			);
+			path = ZoomTransitioning;
+			sourceTree = "<group>";
+		};
+		B128BB2E29B8971F7FF6E9BFB49FD6EA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23BFFBF8D23F2BDD9E3E57F15D62947F /* ZoomTransitioning */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		B27472320E55F5B804A2178F3A8FFD69 /* Pods-ZoomTransitioning_Example */ = {
+			isa = PBXGroup;
+			children = (
+				34CA9B155A89294B62918DD7F2543606 /* Info.plist */,
+				8B8BA30EF8DF8FD96FC8542E054D22A2 /* Pods-ZoomTransitioning_Example.modulemap */,
+				60B458BC5A7C835D14EB08FA0EEF2A26 /* Pods-ZoomTransitioning_Example-acknowledgements.markdown */,
+				324A44E14B55F963B5554F34F868404A /* Pods-ZoomTransitioning_Example-acknowledgements.plist */,
+				F5B10708A342F2E55FEB0329252A669A /* Pods-ZoomTransitioning_Example-dummy.m */,
+				DC339785F27E2896CDF5456DE586DE28 /* Pods-ZoomTransitioning_Example-frameworks.sh */,
+				81AB69A2ACBBACC39F585D2F164E23F2 /* Pods-ZoomTransitioning_Example-resources.sh */,
+				1A70C0983191EE3926D4B26FAD367626 /* Pods-ZoomTransitioning_Example-umbrella.h */,
+				FC0DD42D25968D05ED667E7C5B6B60A4 /* Pods-ZoomTransitioning_Example.debug.xcconfig */,
+				A96C12FAB650560006C35E6D35574632 /* Pods-ZoomTransitioning_Example.release.xcconfig */,
+			);
+			name = "Pods-ZoomTransitioning_Example";
+			path = "Target Support Files/Pods-ZoomTransitioning_Example";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D81AF383C134456DF96802F1F2DC4CCC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90BD72B70E615845C4C01311CACD1E37 /* Info.plist */,
+				0767506209135163806B8C104E1AE07B /* ZoomTransitioning.modulemap */,
+				52F992ED779DBEEDCAE34A27779243F5 /* ZoomTransitioning.xcconfig */,
+				42F2A6AC66DBD9B5C95201C8368613E9 /* ZoomTransitioning-dummy.m */,
+				60C1804B37D9ED34AD393313DAF4BC0E /* ZoomTransitioning-prefix.pch */,
+				50A86EE26675133F285066B3393AB2BA /* ZoomTransitioning-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ZoomTransitioning";
+			sourceTree = "<group>";
+		};
+		ED2164D13E1C0034DEB566C65A90299E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B27472320E55F5B804A2178F3A8FFD69 /* Pods-ZoomTransitioning_Example */,
+				1D8D3EB44C37D086673FA76574F60FB2 /* Pods-ZoomTransitioning_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F5D8029011DAF388B8EA45011F8C88A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B04FA4E54B39EF8F5668C564FC3CAED /* Pods_ZoomTransitioning_Example.framework */,
+				6D7C5843F5BFA665F28EE18BDEBB61AE /* Pods_ZoomTransitioning_Tests.framework */,
+				9787EE7F82BE1A115E18253FAD14A907 /* ZoomTransitioning.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A0F1483D1134DC820BF34D479D47A0DB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D746EF623D2371AD016971F48328CD3A /* Pods-ZoomTransitioning_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3309310E026C86EE2AD54B87886AF50 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D4D912F1A34D2CCFE4B6C0CF9B2493 /* Pods-ZoomTransitioning_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBB86B17BA96F60627B3AFBEB5211AFD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CDCB9854079DA657CB22C08B6904E4 /* ZoomTransitioning-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8B83C3E0F4E4621D661E27A08DC9BA1C /* Pods-ZoomTransitioning_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2395C990CF76454941084AE25E745BD4 /* Build configuration list for PBXNativeTarget "Pods-ZoomTransitioning_Tests" */;
+			buildPhases = (
+				5B71AA6A16DACD525B3A1CD3E1017498 /* Sources */,
+				2AD3110FF8BD6575FA085AFC13D65DF6 /* Frameworks */,
+				A0F1483D1134DC820BF34D479D47A0DB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ZoomTransitioning_Tests";
+			productName = "Pods-ZoomTransitioning_Tests";
+			productReference = 6D7C5843F5BFA665F28EE18BDEBB61AE /* Pods_ZoomTransitioning_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DC75B061E1B4837F52DEB31A9F6D5043 /* Pods-ZoomTransitioning_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B0FF8CA96EAD605CCA2F4D0C0CE77FB /* Build configuration list for PBXNativeTarget "Pods-ZoomTransitioning_Example" */;
+			buildPhases = (
+				7F793CDC8487885448667F1392237BC8 /* Sources */,
+				A36AAC90E29E451ACB72B9B880D9436F /* Frameworks */,
+				C3309310E026C86EE2AD54B87886AF50 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F22E7734270639EF49E597D5F5857A03 /* PBXTargetDependency */,
+			);
+			name = "Pods-ZoomTransitioning_Example";
+			productName = "Pods-ZoomTransitioning_Example";
+			productReference = 6B04FA4E54B39EF8F5668C564FC3CAED /* Pods_ZoomTransitioning_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DDDEDA8B652319276E768E1B2220B68F /* ZoomTransitioning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F0D2CED89ED0694EC208D11CCCE9D6 /* Build configuration list for PBXNativeTarget "ZoomTransitioning" */;
+			buildPhases = (
+				C46E9FEBBF82F4184620E024D962AC46 /* Sources */,
+				405D3A5DEEDE9429F995C92BB8402D5F /* Frameworks */,
+				DBB86B17BA96F60627B3AFBEB5211AFD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZoomTransitioning;
+			productName = ZoomTransitioning;
+			productReference = 9787EE7F82BE1A115E18253FAD14A907 /* ZoomTransitioning.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = F5D8029011DAF388B8EA45011F8C88A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC75B061E1B4837F52DEB31A9F6D5043 /* Pods-ZoomTransitioning_Example */,
+				8B83C3E0F4E4621D661E27A08DC9BA1C /* Pods-ZoomTransitioning_Tests */,
+				DDDEDA8B652319276E768E1B2220B68F /* ZoomTransitioning */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B71AA6A16DACD525B3A1CD3E1017498 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				909E2CE60FF15C2EE01783F9CCBFE8FA /* Pods-ZoomTransitioning_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F793CDC8487885448667F1392237BC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE774D5E4BE2F0C1EA9F6C6EBBE85E9C /* Pods-ZoomTransitioning_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C46E9FEBBF82F4184620E024D962AC46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E09D78CD75DBCBD3245888E7BDAE023 /* ReplaceMe.swift in Sources */,
+				C42DC0B7FF79713747E63F45636D839E /* ZoomTransitioning-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F22E7734270639EF49E597D5F5857A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZoomTransitioning;
+			target = DDDEDA8B652319276E768E1B2220B68F /* ZoomTransitioning */;
+			targetProxy = 3AFABA7BD00E6D2A1868EA1D15C5A595 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		353E3FC1FDB99DB2F8C23FB23C4DE042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96C12FAB650560006C35E6D35574632 /* Pods-ZoomTransitioning_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZoomTransitioning_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZoomTransitioning_Example/Pods-ZoomTransitioning_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZoomTransitioning_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50C54143AF38A3A05616AE0B3C0A5BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F992ED779DBEEDCAE34A27779243F5 /* ZoomTransitioning.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ZoomTransitioning/ZoomTransitioning-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZoomTransitioning/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZoomTransitioning/ZoomTransitioning.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ZoomTransitioning;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		80447A8C62A8C42B951EEA21E02880D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F992ED779DBEEDCAE34A27779243F5 /* ZoomTransitioning.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ZoomTransitioning/ZoomTransitioning-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZoomTransitioning/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZoomTransitioning/ZoomTransitioning.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ZoomTransitioning;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		82BCCF6CB9C023334A1B54B3E2B2F051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC0DD42D25968D05ED667E7C5B6B60A4 /* Pods-ZoomTransitioning_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZoomTransitioning_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZoomTransitioning_Example/Pods-ZoomTransitioning_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZoomTransitioning_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92D30B8A8815D72FA98274CF755369C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F65CDBFD342B0520AFCFA52B5E5169D0 /* Pods-ZoomTransitioning_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZoomTransitioning_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZoomTransitioning_Tests/Pods-ZoomTransitioning_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZoomTransitioning_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E0119E9DFCD32681F67AD1A805F01BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ECECC07EA9E030F7DFABBD8D7F8F801 /* Pods-ZoomTransitioning_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZoomTransitioning_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZoomTransitioning_Tests/Pods-ZoomTransitioning_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZoomTransitioning_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2395C990CF76454941084AE25E745BD4 /* Build configuration list for PBXNativeTarget "Pods-ZoomTransitioning_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D30B8A8815D72FA98274CF755369C9 /* Debug */,
+				E0119E9DFCD32681F67AD1A805F01BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B0FF8CA96EAD605CCA2F4D0C0CE77FB /* Build configuration list for PBXNativeTarget "Pods-ZoomTransitioning_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82BCCF6CB9C023334A1B54B3E2B2F051 /* Debug */,
+				353E3FC1FDB99DB2F8C23FB23C4DE042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F0D2CED89ED0694EC208D11CCCE9D6 /* Build configuration list for PBXNativeTarget "ZoomTransitioning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C54143AF38A3A05616AE0B3C0A5BA7 /* Debug */,
+				80447A8C62A8C42B951EEA21E02880D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

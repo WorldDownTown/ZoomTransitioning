@@ -1,0 +1,16 @@
+PODS:
+  - ZoomTransitioning (0.1.0)
+
+DEPENDENCIES:
+  - ZoomTransitioning (from `../`)
+
+EXTERNAL SOURCES:
+  ZoomTransitioning:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZoomTransitioning: e51ef9ca0398e75d14230b7fec0dfa5ffd18fcdc
+
+PODFILE CHECKSUM: d37832a2b1ffc5220e789d16c56bf84dc0202605
+
+COCOAPODS: 1.0.1

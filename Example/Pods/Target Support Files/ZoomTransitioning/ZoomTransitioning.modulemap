@@ -1,0 +1,6 @@
+framework module ZoomTransitioning {
+  umbrella header "ZoomTransitioning-umbrella.h"
+
+  export *
+  module * { export * }
+}
