@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZoomTransitioning
 
 class ImageListViewController: UICollectionViewController {
 
@@ -47,7 +48,6 @@ extension ImageListViewController {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let space: CGFloat = 8.0
         let length = (collectionView.frame.width - space * 3.0) / 2.0
-        print(length)
         return CGSize(width: length, height: length)
     }
 }

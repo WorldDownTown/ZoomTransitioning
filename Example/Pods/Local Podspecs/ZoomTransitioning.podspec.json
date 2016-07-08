@@ -18,5 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZoomTransitioning/Classes/**/*"
+  "source_files": "ZoomTransitioning/Classes/*.swift"
 }
