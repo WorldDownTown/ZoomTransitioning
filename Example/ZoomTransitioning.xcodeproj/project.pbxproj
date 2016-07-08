@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ImageListViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9E311397DECA0C22A9A2832C /* Pods_ZoomTransitioning_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C09DC31275CD2C7D14DF84 /* Pods_ZoomTransitioning_Example.framework */; };
 		B7D50DD50C07DB391BFA5CE1 /* Pods_ZoomTransitioning_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E35D531A8B77D27A28F98A /* Pods_ZoomTransitioning_Tests.framework */; };
+		CE35C25B1D2F251600ED2030 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C25A1D2F251600ED2030 /* ImageDetailViewController.swift */; };
+		CE9F9FD81D2F1A0E00F94451 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9FD71D2F1A0E00F94451 /* ImageListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,7 @@
 		607FACD01AFB9204008FA782 /* ZoomTransitioning_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomTransitioning_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		9525702B7213E8ED06AD025D /* Pods-ZoomTransitioning_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomTransitioning_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomTransitioning_Example/Pods-ZoomTransitioning_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B5B959B9B3D366D21A8072 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A9C3937AE355E89324C21F6F /* Pods-ZoomTransitioning_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomTransitioning_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomTransitioning_Tests/Pods-ZoomTransitioning_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CE35C25A1D2F251600ED2030 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		CE9F9FD71D2F1A0E00F94451 /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		E09BFCD37E6AFFD7DF7762C9 /* Pods-ZoomTransitioning_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomTransitioning_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomTransitioning_Tests/Pods-ZoomTransitioning_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* ImageListViewController.swift */,
+				CE35C25A1D2F251600ED2030 /* ImageDetailViewController.swift */,
+				CE9F9FD71D2F1A0E00F94451 /* ImageListCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -359,8 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* ImageListViewController.swift in Sources */,
+				CE9F9FD81D2F1A0E00F94451 /* ImageListCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				CE35C25B1D2F251600ED2030 /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
