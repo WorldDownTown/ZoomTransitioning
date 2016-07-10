@@ -11,16 +11,12 @@ import ZoomTransitioning
 
 class ImageListViewController: UICollectionViewController {
 
+    private var selectedImageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-
-        let vc = segue.destinationViewController as! ImageDetailViewController
-        let index = collectionView?.indexPathsForSelectedItems()?.first?.item ?? 0
-        vc.image = UIImage(named: "image\(index)")
+        title = "List"
+        clearsSelectionOnViewWillAppear = false
     }
 }
 
@@ -41,6 +37,17 @@ extension ImageListViewController {
 }
 
 
+// MARK: - UICollectionViewDelegate
+
+extension ImageListViewController {
+
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! ImageListCell
+        selectedImageView = cell.imageView
+    }
+}
+
+
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ImageListViewController {
@@ -49,5 +56,36 @@ extension ImageListViewController {
         let space: CGFloat = 8.0
         let length = (collectionView.frame.width - space * 3.0) / 2.0
         return CGSize(width: length, height: length)
+    }
+}
+
+
+// MARK: - ZoomTransitionDelegate
+
+extension ImageListViewController: ZoomTransitionDelegate {
+
+    func transitionSourceImageView() -> UIImageView? {
+        guard let selectedImageView = selectedImageView else { return nil }
+        let imageView = UIImageView(image: selectedImageView.image)
+        imageView.contentMode = selectedImageView.contentMode
+        imageView.clipsToBounds = true
+        imageView.frame = selectedImageViewFrame
+        return imageView
+    }
+
+    func transitionSourceImageViewFrame() -> CGRect {
+        return selectedImageViewFrame
+    }
+
+    func transitionDestinationImageViewFrame() -> CGRect {
+        return selectedImageViewFrame
+    }
+
+    func transitionDidEnd(transitioningImageView imageView: UIImageView) {
+    }
+
+    private var selectedImageViewFrame: CGRect {
+        guard let selectedImageView = selectedImageView else { return CGRect.zero }
+        return selectedImageView.convertRect(selectedImageView.frame, toView: view)
     }
 }

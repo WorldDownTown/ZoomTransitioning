@@ -9,7 +9,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rwr-jZ-YMU">
             <objects>
-                <navigationController id="7mK-7o-rKz" sceneMemberID="viewController">
+                <navigationController id="7mK-7o-rKz" customClass="NavigationController" customModule="ZoomTransitioning_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sFM-kQ-oKO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +25,7 @@
         <!--List-->
         <scene sceneID="KXa-h1-2LM">
             <objects>
-                <collectionViewController title="List" id="JWP-0A-KDp" customClass="ImageListViewController" customModule="ZoomTransitioning_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="JWP-0A-KDp" customClass="ImageListViewController" customModule="ZoomTransitioning_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="H4E-0x-1D8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,16 +88,15 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFZ-h7-OPf">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="01C-a3-p6V">
-                                        <rect key="frame" x="8" y="8" width="584" height="584"/>
-                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="01C-a3-p6V">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="01C-a3-p6V" secondAttribute="height" multiplier="1:1" id="PdX-jE-vzt"/>
+                                            <constraint firstAttribute="width" secondItem="01C-a3-p6V" secondAttribute="height" multiplier="3:2" id="PdX-jE-vzt"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpE-w9-PHO">
-                                        <rect key="frame" x="8" y="600" width="584" height="1156.5"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+                                        <rect key="frame" x="8" y="408" width="584" height="1156.5"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
 Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
 Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
 Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
@@ -105,7 +104,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
 Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
 Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
 Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -113,11 +112,11 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MpE-w9-PHO" firstAttribute="leading" secondItem="LFZ-h7-OPf" secondAttribute="leading" constant="8" id="Hip-6i-vJg"/>
-                                    <constraint firstItem="01C-a3-p6V" firstAttribute="width" secondItem="LFZ-h7-OPf" secondAttribute="width" constant="-16" id="IXA-aC-RxQ"/>
+                                    <constraint firstItem="01C-a3-p6V" firstAttribute="width" secondItem="LFZ-h7-OPf" secondAttribute="width" id="IXA-aC-RxQ"/>
                                     <constraint firstAttribute="trailing" secondItem="MpE-w9-PHO" secondAttribute="trailing" constant="8" id="P7R-WW-od5"/>
-                                    <constraint firstAttribute="trailing" secondItem="01C-a3-p6V" secondAttribute="trailing" constant="8" id="bs6-YY-KBR"/>
-                                    <constraint firstItem="01C-a3-p6V" firstAttribute="leading" secondItem="LFZ-h7-OPf" secondAttribute="leading" constant="8" id="imj-gn-KN8"/>
-                                    <constraint firstItem="01C-a3-p6V" firstAttribute="top" secondItem="LFZ-h7-OPf" secondAttribute="top" constant="8" id="lEf-JP-w55"/>
+                                    <constraint firstAttribute="trailing" secondItem="01C-a3-p6V" secondAttribute="trailing" id="bs6-YY-KBR"/>
+                                    <constraint firstItem="01C-a3-p6V" firstAttribute="leading" secondItem="LFZ-h7-OPf" secondAttribute="leading" id="imj-gn-KN8"/>
+                                    <constraint firstItem="01C-a3-p6V" firstAttribute="top" secondItem="LFZ-h7-OPf" secondAttribute="top" id="lEf-JP-w55"/>
                                     <constraint firstAttribute="bottom" secondItem="MpE-w9-PHO" secondAttribute="bottom" constant="8" id="sdk-bg-APf"/>
                                     <constraint firstItem="MpE-w9-PHO" firstAttribute="top" secondItem="01C-a3-p6V" secondAttribute="bottom" constant="8" id="tP2-qh-GC3"/>
                                 </constraints>

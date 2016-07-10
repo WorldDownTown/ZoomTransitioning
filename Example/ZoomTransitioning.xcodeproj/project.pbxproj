@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9E311397DECA0C22A9A2832C /* Pods_ZoomTransitioning_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C09DC31275CD2C7D14DF84 /* Pods_ZoomTransitioning_Example.framework */; };
 		B7D50DD50C07DB391BFA5CE1 /* Pods_ZoomTransitioning_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E35D531A8B77D27A28F98A /* Pods_ZoomTransitioning_Tests.framework */; };
+		CE23D8B61D30DCEA003F0A37 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23D8B51D30DCEA003F0A37 /* NavigationController.swift */; };
 		CE35C25B1D2F251600ED2030 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35C25A1D2F251600ED2030 /* ImageDetailViewController.swift */; };
 		CE9F9FD81D2F1A0E00F94451 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F9FD71D2F1A0E00F94451 /* ImageListCell.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		9525702B7213E8ED06AD025D /* Pods-ZoomTransitioning_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomTransitioning_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomTransitioning_Example/Pods-ZoomTransitioning_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B5B959B9B3D366D21A8072 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A9C3937AE355E89324C21F6F /* Pods-ZoomTransitioning_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomTransitioning_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomTransitioning_Tests/Pods-ZoomTransitioning_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CE23D8B51D30DCEA003F0A37 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CE35C25A1D2F251600ED2030 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		CE9F9FD71D2F1A0E00F94451 /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		E09BFCD37E6AFFD7DF7762C9 /* Pods-ZoomTransitioning_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomTransitioning_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZoomTransitioning_Tests/Pods-ZoomTransitioning_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				CE23D8B51D30DCEA003F0A37 /* NavigationController.swift */,
 				607FACD71AFB9204008FA782 /* ImageListViewController.swift */,
 				CE35C25A1D2F251600ED2030 /* ImageDetailViewController.swift */,
 				CE9F9FD71D2F1A0E00F94451 /* ImageListCell.swift */,
@@ -367,6 +370,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ImageListViewController.swift in Sources */,
 				CE9F9FD81D2F1A0E00F94451 /* ImageListCell.swift in Sources */,
+				CE23D8B61D30DCEA003F0A37 /* NavigationController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				CE35C25B1D2F251600ED2030 /* ImageDetailViewController.swift in Sources */,
 			);

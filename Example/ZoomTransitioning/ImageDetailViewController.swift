@@ -7,16 +7,40 @@
 //
 
 import UIKit
+import ZoomTransitioning
 
 class ImageDetailViewController: UIViewController {
 
-    var image: UIImage?
-
     @IBOutlet private weak var imageView: UIImageView!
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        imageView.image = image
+// MARK: - ZoomTransitionDelegate
+
+extension ImageDetailViewController: ZoomTransitionDelegate {
+
+    func transitionSourceImageView() -> UIImageView? {
+        let imageView = UIImageView(image: self.imageView.image)
+        imageView.contentMode = self.imageView.contentMode
+        imageView.clipsToBounds = true
+        imageView.frame = self.imageView.convertRect(self.imageView.frame, toView: view)
+        return imageView
+    }
+
+    func transitionSourceImageViewFrame() -> CGRect {
+        return imageView.convertRect(imageView.frame, toView: view)
+    }
+
+    func transitionDestinationImageViewFrame() -> CGRect {
+        let x: CGFloat = 0.0
+        let y = topLayoutGuide.length
+        let width = view.frame.width
+        let height = width * 2.0 / 3.0
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
+
+    func transitionDidEnd(transitioningImageView imageView: UIImageView) {
+        self.imageView.hidden = false
+        self.imageView.image = imageView.image
     }
 }
