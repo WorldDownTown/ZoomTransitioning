@@ -60,32 +60,47 @@ extension ImageListViewController {
 }
 
 
-// MARK: - ZoomTransitionDelegate
+// MARK: - ZoomTransitionSourceDelegate
 
-extension ImageListViewController: ZoomTransitionDelegate {
+extension ImageListViewController: ZoomTransitionSourceDelegate {
 
-    func transitionSourceImageView() -> UIImageView? {
-        guard let selectedImageView = selectedImageView else { return nil }
-        let imageView = UIImageView(image: selectedImageView.image)
-        imageView.contentMode = selectedImageView.contentMode
-        imageView.clipsToBounds = true
-        imageView.frame = selectedImageViewFrame
-        return imageView
+    func transitionSourceImageView() -> UIImageView {
+        return selectedImageView ?? UIImageView()
     }
 
     func transitionSourceImageViewFrame() -> CGRect {
-        return selectedImageViewFrame
-    }
-
-    func transitionDestinationImageViewFrame() -> CGRect {
-        return selectedImageViewFrame
-    }
-
-    func transitionDidEnd(transitioningImageView imageView: UIImageView) {
-    }
-
-    private var selectedImageViewFrame: CGRect {
         guard let selectedImageView = selectedImageView else { return CGRect.zero }
         return selectedImageView.convertRect(selectedImageView.frame, toView: view)
+    }
+
+    func transitionSourceWillBegin() {
+        selectedImageView?.hidden = true
+    }
+
+    func transitionSourceDidEnd() {
+        selectedImageView?.hidden = false
+    }
+
+    func transitionSourceDidCancel() {
+        selectedImageView?.hidden = false
+    }
+}
+
+
+// MARK: - ZoomTransitionDestinationDelegate
+
+extension ImageListViewController: ZoomTransitionDestinationDelegate {
+
+    func transitionDestinationImageViewFrame() -> CGRect {
+        guard let selectedImageView = selectedImageView else { return CGRect.zero }
+        return selectedImageView.convertRect(selectedImageView.frame, toView: view)
+    }
+
+    func transitionDestinationWillBegin() {
+        selectedImageView?.hidden = true
+    }
+
+    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) {
+        selectedImageView?.hidden = false
     }
 }

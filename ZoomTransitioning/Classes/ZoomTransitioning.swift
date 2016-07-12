@@ -8,12 +8,20 @@
 
 import UIKit
 
-public protocol ZoomTransitionDelegate: NSObjectProtocol {
+@objc public protocol ZoomTransitionSourceDelegate: NSObjectProtocol {
 
-    func transitionSourceImageView() -> UIImageView?
+    func transitionSourceImageView() -> UIImageView
     func transitionSourceImageViewFrame() -> CGRect
+    optional func transitionSourceWillBegin()
+    optional func transitionSourceDidEnd()
+    optional func transitionSourceDidCancel()
+}
+
+@objc public protocol ZoomTransitionDestinationDelegate: NSObjectProtocol {
+
     func transitionDestinationImageViewFrame() -> CGRect
-    func transitionDidEnd(transitioningImageView imageView: UIImageView)
+    optional func transitionDestinationWillBegin()
+    optional func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView)
 }
 
 public class ZoomTransitioning: NSObject {
@@ -22,8 +30,8 @@ public class ZoomTransitioning: NSObject {
     private let transitionDuration: NSTimeInterval = 0.3
     private weak var navigationController: UINavigationController?
     private weak var transitionContext: UIViewControllerContextTransitioning?
-    private weak var source: ZoomTransitionDelegate?
-    private weak var destination: ZoomTransitionDelegate?
+    private weak var source: ZoomTransitionSourceDelegate?
+    private weak var destination: ZoomTransitionDestinationDelegate?
     private var push = false
     private var interactive = false
     private var interactiveProgress: NSTimeInterval = 0.0
@@ -48,7 +56,7 @@ extension ZoomTransitioning: UINavigationControllerDelegate {
 
     public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.navigationController = navigationController
-        guard let source = fromVC as? ZoomTransitionDelegate, let destination = toVC as? ZoomTransitionDelegate else { return nil }
+        guard let source = fromVC as? ZoomTransitionSourceDelegate, let destination = toVC as? ZoomTransitionDestinationDelegate else { return nil }
 
         push = (operation == .Push)
         self.source = source
@@ -70,8 +78,9 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         guard let containerView = transitionContext.containerView(),
             fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
             toView = transitionContext.viewForKey(UITransitionContextToViewKey),
+            source = source,
             destination = destination,
-            sourceImageView = source?.transitionSourceImageView() else {
+            sourceImageView = transitioningImageView() else {
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
             return
         }
@@ -82,6 +91,9 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
 
         containerView.insertSubview(toView, belowSubview: fromView)
         containerView.addSubview(sourceImageView)
+
+        source.transitionSourceWillBegin?()
+        destination.transitionDestinationWillBegin?()
 
         if push {
             UIView.animateWithDuration(
@@ -99,7 +111,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                     sourceImageView.removeFromSuperview()
                     toView.addGestureRecognizer(self.screenEdgePanGestureRecognizer)
 
-                    destination.transitionDidEnd(transitioningImageView: sourceImageView)
+                    source.transitionSourceDidEnd?()
+                    destination.transitionDestinationDidEnd?(transitioningImageView: sourceImageView)
 
                     let completed = !transitionContext.transitionWasCancelled()
                     transitionContext.completeTransition(completed)
@@ -122,7 +135,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                     fromView.removeGestureRecognizer(self.screenEdgePanGestureRecognizer)
                     sourceImageView.removeFromSuperview()
 
-                    destination.transitionDidEnd(transitioningImageView: sourceImageView)
+                    source.transitionSourceDidEnd?()
+                    destination.transitionDestinationDidEnd?(transitioningImageView: sourceImageView)
 
                     let completed = !transitionContext.transitionWasCancelled()
                     transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
@@ -141,7 +155,7 @@ extension ZoomTransitioning: UIViewControllerInteractiveTransitioning {
             fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
             toView = transitionContext.viewForKey(UITransitionContextToViewKey),
             containerView = transitionContext.containerView(),
-            sourceImageView = source?.transitionSourceImageView() else {
+            sourceImageView = transitioningImageView() else {
                 return
         }
 
@@ -151,7 +165,7 @@ extension ZoomTransitioning: UIViewControllerInteractiveTransitioning {
     }
 
     public func completionCurve() -> UIViewAnimationCurve {
-        return .EaseIn
+        return .EaseOut
     }
 }
 
@@ -167,14 +181,24 @@ extension ZoomTransitioning: UIGestureRecognizerDelegate {
 }
 
 
-// MARK: -
+// MARK: - Private
 
 extension ZoomTransitioning {
+
+    private func transitioningImageView() -> UIImageView? {
+        guard let sourceImageView = source?.transitionSourceImageView(),
+            sourceImageViewFrame = source?.transitionSourceImageViewFrame() else { return nil }
+        let imageView = UIImageView(image: sourceImageView.image)
+        imageView.contentMode = sourceImageView.contentMode
+        imageView.clipsToBounds = true
+        imageView.frame = sourceImageViewFrame
+        return imageView
+    }
 
     @objc private func handlePanGestureRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
         switch recognizer.state {
         case .Began:
-            navigationController?.popViewControllerAnimated(true)
+            beginInteractiveTransaction()
         case .Changed:
             guard let view = recognizer.view else { return }
             let progress = recognizer.translationInView(view).x / view.bounds.width
@@ -188,11 +212,18 @@ extension ZoomTransitioning {
                 cancelInteractiveTransition()
             }
             interactive = false
-        case .Possible, .Failed, .Recognized:
-            transitionContext?.cancelInteractiveTransition()
-            transitionContext?.completeTransition(false)
+        default:
+            cancelInteractiveTransition()
             interactive = false
         }
+    }
+
+    private func beginInteractiveTransaction() {
+        guard let source = source, destination = destination, navigationController = navigationController else { return }
+
+        source.transitionSourceWillBegin?()
+        destination.transitionDestinationWillBegin?()
+        navigationController.popViewControllerAnimated(true)
     }
 
     private func updateInteractiveTransitionWithProgress(progress: CGFloat) {
@@ -226,11 +257,13 @@ extension ZoomTransitioning {
             fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
             sourceImageView = containerView.subviews.flatMap({ $0 as? UIImageView }).first,
             destinationFrame = destination?.transitionDestinationImageViewFrame(),
+            source = source,
             destination = destination else {
                 return
         }
 
         let duration = transitionDuration * (1.0 - interactiveProgress)
+
         UIView.animateWithDuration(
             duration,
             animations: {
@@ -241,7 +274,8 @@ extension ZoomTransitioning {
                 sourceImageView.removeFromSuperview()
                 sourceImageView.removeGestureRecognizer(self.screenEdgePanGestureRecognizer)
 
-                destination.transitionDidEnd(transitioningImageView: sourceImageView)
+                source.transitionSourceDidEnd?()
+                destination.transitionDestinationDidEnd?(transitioningImageView: sourceImageView)
 
                 transitionContext.finishInteractiveTransition()
                 transitionContext.completeTransition(true)
@@ -253,7 +287,8 @@ extension ZoomTransitioning {
             containerView = transitionContext.containerView(),
             fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
             sourceImageView = containerView.subviews.flatMap({ $0 as? UIImageView }).first,
-            sourceFrame = source?.transitionSourceImageViewFrame() else {
+            sourceFrame = source?.transitionSourceImageViewFrame(),
+            source = source else {
                 return
         }
 
@@ -266,6 +301,8 @@ extension ZoomTransitioning {
             },
             completion: { _ in
                 sourceImageView.removeFromSuperview()
+
+                source.transitionSourceDidCancel?()
 
                 transitionContext.cancelInteractiveTransition()
                 transitionContext.completeTransition(false)

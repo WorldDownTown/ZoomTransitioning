@@ -15,21 +15,35 @@ class ImageDetailViewController: UIViewController {
 }
 
 
-// MARK: - ZoomTransitionDelegate
+// MARK: - ZoomTransitionSourceDelegate
 
-extension ImageDetailViewController: ZoomTransitionDelegate {
+extension ImageDetailViewController: ZoomTransitionSourceDelegate {
 
-    func transitionSourceImageView() -> UIImageView? {
-        let imageView = UIImageView(image: self.imageView.image)
-        imageView.contentMode = self.imageView.contentMode
-        imageView.clipsToBounds = true
-        imageView.frame = self.imageView.convertRect(self.imageView.frame, toView: view)
+    func transitionSourceImageView() -> UIImageView {
         return imageView
     }
 
     func transitionSourceImageViewFrame() -> CGRect {
         return imageView.convertRect(imageView.frame, toView: view)
     }
+
+    func transitionSourceWillBegin() {
+        self.imageView.hidden = true
+    }
+
+    func transitionSourceDidEnd() {
+        self.imageView.hidden = false
+    }
+
+    func transitionSourceDidCancel() {
+        self.imageView.hidden = false
+    }
+}
+
+
+// MARK: - ZoomTransitionDestinationDelegate
+
+extension ImageDetailViewController: ZoomTransitionDestinationDelegate {
 
     func transitionDestinationImageViewFrame() -> CGRect {
         let x: CGFloat = 0.0
@@ -39,7 +53,11 @@ extension ImageDetailViewController: ZoomTransitionDelegate {
         return CGRect(x: x, y: y, width: width, height: height)
     }
 
-    func transitionDidEnd(transitioningImageView imageView: UIImageView) {
+    func transitionDestinationWillBegin() {
+        self.imageView.hidden = true
+    }
+
+    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) {
         self.imageView.hidden = false
         self.imageView.image = imageView.image
     }
