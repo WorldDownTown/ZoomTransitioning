@@ -8,22 +8,6 @@
 
 import UIKit
 
-@objc public protocol ZoomTransitionSourceDelegate: NSObjectProtocol {
-
-    func transitionSourceImageView() -> UIImageView
-    func transitionSourceImageViewFrame() -> CGRect
-    optional func transitionSourceWillBegin()
-    optional func transitionSourceDidEnd()
-    optional func transitionSourceDidCancel()
-}
-
-@objc public protocol ZoomTransitionDestinationDelegate: NSObjectProtocol {
-
-    func transitionDestinationImageViewFrame() -> CGRect
-    optional func transitionDestinationWillBegin()
-    optional func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView)
-}
-
 public class ZoomTransitioning: NSObject {
 
     private let screenEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer()

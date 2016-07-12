@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of ZoomTransitioning.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/ZoomTransitioning",
+  "homepage": "https://github.com/WorldDownTown/ZoomTransitioning",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "WorldDownTown": "WorldDownTown@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/ZoomTransitioning.git",
+    "git": "https://github.com/WorldDownTown/ZoomTransitioning.git",
     "tag": "0.1.0"
   },
   "platforms": {
