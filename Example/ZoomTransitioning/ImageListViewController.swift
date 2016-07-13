@@ -3,7 +3,7 @@
 //  ZoomTransitioning
 //
 //  Created by WorldDownTown on 07/08/2016.
-//  Copyright (c) 2016 WorldDownTown. All rights reserved.
+//  Copyright © 2016 WorldDownTown. All rights reserved.
 //
 
 import UIKit

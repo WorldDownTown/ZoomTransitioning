@@ -2,8 +2,8 @@
 //  NavigationController.swift
 //  ZoomTransitioning
 //
-//  Created by shoji on 2016/07/09.
-//  Copyright © 2016年 CocoaPods. All rights reserved.
+//  Created by WorldDownTown on 07/09/2016.
+//  Copyright © 2016 WorldDownTown. All rights reserved.
 //
 
 import UIKit
