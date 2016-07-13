@@ -194,7 +194,7 @@ extension ZoomTransitioning: UIViewControllerInteractiveTransitioning {
 extension ZoomTransitioning: UIGestureRecognizerDelegate {
 
     public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        interactive = true
+        interactive = (gestureRecognizer === screenEdgePanGestureRecognizer)
         return true
     }
 }

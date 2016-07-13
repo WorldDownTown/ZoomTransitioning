@@ -18,4 +18,10 @@ class NavigationController: UINavigationController {
 
         delegate = zoomTransitioning
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        interactivePopGestureRecognizer?.delegate = zoomTransitioning
+    }
 }
