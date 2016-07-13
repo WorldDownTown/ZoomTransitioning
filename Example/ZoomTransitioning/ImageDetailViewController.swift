@@ -12,36 +12,42 @@ import ZoomTransitioning
 class ImageDetailViewController: UIViewController {
 
     @IBOutlet private weak var largeImageView: UIImageView!
-    @IBOutlet private weak var smallImageView: UIImageView!
+    @IBOutlet private weak var smallImageView1: UIImageView!
+    @IBOutlet private weak var smallImageView2: UIImageView!
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+
+        guard let vc = segue.destinationViewController as? ImageOnlyViewController else { return }
+        vc.image = smallImageView2.image
+    }
 }
 
 
-/*
 // MARK: - ZoomTransitionSourceDelegate
 
 extension ImageDetailViewController: ZoomTransitionSourceDelegate {
 
     func transitionSourceImageView() -> UIImageView {
-        return largeImageView
+        return smallImageView1
     }
 
     func transitionSourceImageViewFrame(forward forward: Bool) -> CGRect {
-        return largeImageView.convertRect(largeImageView.frame, toView: view)
+        return smallImageView1.convertRect(smallImageView1.frame, toView: view)
     }
 
     func transitionSourceWillBegin() {
-        largeImageView.hidden = true
+        smallImageView1.hidden = true
     }
 
     func transitionSourceDidEnd() {
-        largeImageView.hidden = false
+        smallImageView1.hidden = false
     }
 
     func transitionSourceDidCancel() {
-        largeImageView.hidden = false
+        smallImageView1.hidden = false
     }
 }
- */
 
 
 // MARK: - ZoomTransitionDestinationDelegate
@@ -71,14 +77,5 @@ extension ImageDetailViewController: ZoomTransitionDestinationDelegate {
 
     func transitionDestinationDidCancel() {
         largeImageView.hidden = false
-    }
-}
-
-
-// MARK: - IBAction
-
-extension ImageDetailViewController {
-
-    @IBAction private func imageButtonTouchUpInside() {
     }
 }
