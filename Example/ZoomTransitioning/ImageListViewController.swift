@@ -70,7 +70,7 @@ extension ImageListViewController: ZoomTransitionSourceDelegate {
 
     func transitionSourceImageViewFrame(forward forward: Bool) -> CGRect {
         guard let selectedImageView = selectedImageView else { return CGRect.zero }
-        return selectedImageView.convertRect(selectedImageView.frame, toView: view)
+        return selectedImageView.convertRect(selectedImageView.bounds, toView: view)
     }
 
     func transitionSourceWillBegin() {
