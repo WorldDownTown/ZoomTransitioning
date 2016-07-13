@@ -68,7 +68,7 @@ extension ImageListViewController: ZoomTransitionSourceDelegate {
         return selectedImageView ?? UIImageView()
     }
 
-    func transitionSourceImageViewFrame() -> CGRect {
+    func transitionSourceImageViewFrame(forward forward: Bool) -> CGRect {
         guard let selectedImageView = selectedImageView else { return CGRect.zero }
         return selectedImageView.convertRect(selectedImageView.frame, toView: view)
     }
@@ -87,11 +87,12 @@ extension ImageListViewController: ZoomTransitionSourceDelegate {
 }
 
 
+/*
 // MARK: - ZoomTransitionDestinationDelegate
 
 extension ImageListViewController: ZoomTransitionDestinationDelegate {
 
-    func transitionDestinationImageViewFrame() -> CGRect {
+    func transitionDestinationImageViewFrame(forward forward: Bool) -> CGRect {
         guard let selectedImageView = selectedImageView else { return CGRect.zero }
         return selectedImageView.convertRect(selectedImageView.frame, toView: view)
     }
@@ -104,3 +105,4 @@ extension ImageListViewController: ZoomTransitionDestinationDelegate {
         selectedImageView?.hidden = false
     }
 }
+ */
