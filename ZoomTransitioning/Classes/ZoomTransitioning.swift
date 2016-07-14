@@ -10,23 +10,13 @@ import UIKit
 
 public class ZoomTransitioning: NSObject {
 
-    private let screenEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer()
     private let transitionDuration: NSTimeInterval = 0.3
-    private weak var navigationController: UINavigationController?
     private weak var transitionContext: UIViewControllerContextTransitioning?
     private weak var source: ZoomTransitionSourceDelegate?
     private weak var destination: ZoomTransitionDestinationDelegate?
     private var forward = false
     private var interactive = false
     private var interactiveProgress: NSTimeInterval = 0.0
-
-    public required override init() {
-        super.init()
-
-        screenEdgePanGestureRecognizer.edges = .Left
-        screenEdgePanGestureRecognizer.delegate = self
-        screenEdgePanGestureRecognizer.addTarget(self, action: #selector(ZoomTransitioning.handlePanGestureRecognizer(_:)))
-    }
 }
 
 
@@ -51,7 +41,10 @@ extension ZoomTransitioning: UINavigationControllerDelegate {
             self.destination = destination
         }
 
-        self.navigationController = navigationController
+        if let screenEdgePanGestureRecognizer = navigationController.interactivePopGestureRecognizer as? UIScreenEdgePanGestureRecognizer {
+            screenEdgePanGestureRecognizer.delegate = self
+            screenEdgePanGestureRecognizer.addTarget(self, action: #selector(ZoomTransitioning.handlePanGestureRecognizer(_:)))
+        }
 
         return self
     }
@@ -108,7 +101,6 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                 sourceView.alpha = 1.0
                 transitioningImageView.alpha = 0.0
                 transitioningImageView.removeFromSuperview()
-                destinationView.addGestureRecognizer(self.screenEdgePanGestureRecognizer)
 
                 source.transitionSourceDidEnd?()
                 destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
@@ -153,7 +145,6 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
             },
             completion: { _ in
                 destinationView.alpha = 1.0
-                destinationView.removeGestureRecognizer(self.screenEdgePanGestureRecognizer)
                 transitioningImageView.removeFromSuperview()
 
                 source.transitionSourceDidEnd?()
@@ -194,7 +185,7 @@ extension ZoomTransitioning: UIViewControllerInteractiveTransitioning {
 extension ZoomTransitioning: UIGestureRecognizerDelegate {
 
     public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        interactive = (gestureRecognizer === screenEdgePanGestureRecognizer)
+        interactive = true
         return true
     }
 }
@@ -248,11 +239,9 @@ extension ZoomTransitioning {
     }
 
     private func beginInteractiveTransaction() {
-        guard let source = source, destination = destination, navigationController = navigationController else { return }
-
+        guard let source = source, destination = destination else { return }
         source.transitionSourceWillBegin?()
         destination.transitionDestinationWillBegin?()
-        navigationController.popViewControllerAnimated(true)
     }
 
     private func updateInteractiveTransitionWithProgress(progress: CGFloat) {
@@ -301,13 +290,13 @@ extension ZoomTransitioning {
             },
             completion: { _ in
                 transitioningImageView.removeFromSuperview()
-                transitioningImageView.removeGestureRecognizer(self.screenEdgePanGestureRecognizer)
 
                 source.transitionSourceDidEnd?()
                 destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
 
                 transitionContext.finishInteractiveTransition()
                 transitionContext.completeTransition(true)
+                self.transitionContext = nil
         })
     }
 
@@ -337,6 +326,7 @@ extension ZoomTransitioning {
 
                 transitionContext.cancelInteractiveTransition()
                 transitionContext.completeTransition(false)
+                self.transitionContext = nil
         })
     }
 }
