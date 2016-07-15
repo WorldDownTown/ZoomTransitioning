@@ -14,6 +14,7 @@ public class ZoomTransitioning: NSObject {
     private weak var transitionContext: UIViewControllerContextTransitioning?
     private weak var source: ZoomTransitionSourceDelegate?
     private weak var destination: ZoomTransitionDestinationDelegate?
+    private weak var screenEdgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer?
     private var forward = false
     private var interactive = false
     private var interactiveProgress: NSTimeInterval = 0.0
@@ -44,6 +45,7 @@ extension ZoomTransitioning: UINavigationControllerDelegate {
         if let screenEdgePanGestureRecognizer = navigationController.interactivePopGestureRecognizer as? UIScreenEdgePanGestureRecognizer {
             screenEdgePanGestureRecognizer.delegate = self
             screenEdgePanGestureRecognizer.addTarget(self, action: #selector(ZoomTransitioning.handlePanGestureRecognizer(_:)))
+            self.screenEdgePanGestureRecognizer = screenEdgePanGestureRecognizer
         }
 
         return self
@@ -188,6 +190,10 @@ extension ZoomTransitioning: UIGestureRecognizerDelegate {
         interactive = true
         return true
     }
+
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return screenEdgePanGestureRecognizer === gestureRecognizer
+    }
 }
 
 
@@ -281,7 +287,6 @@ extension ZoomTransitioning {
         }
 
         let duration = transitionDuration * (1.0 - interactiveProgress)
-
         UIView.animateWithDuration(
             duration,
             animations: {
