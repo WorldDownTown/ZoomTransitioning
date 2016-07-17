@@ -13,6 +13,7 @@ final class ZoomInteractiveTransitioning: NSObject {
     private weak var source: ZoomTransitionSourceDelegate?
     private weak var destination: ZoomTransitionDestinationDelegate?
     private weak var transitionContext: UIViewControllerContextTransitioning?
+    private var animating = false
     private var interactive = false
     private var interactiveProgress: NSTimeInterval = 0.0
 }
@@ -53,6 +54,10 @@ extension ZoomInteractiveTransitioning: UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return gestureRecognizer is UIScreenEdgePanGestureRecognizer
     }
+
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        return !animating
+    }
 }
 
 
@@ -86,7 +91,7 @@ extension ZoomInteractiveTransitioning {
         case .Cancelled, .Ended:
             guard let view = recognizer.view else { return }
             let progress = recognizer.translationInView(view).x / view.bounds.width
-            if progress > 0.33 {
+            if progress > 0.3 {
                 finishInteractiveTransition()
             } else {
                 cancelInteractiveTransition()
@@ -140,6 +145,7 @@ extension ZoomInteractiveTransitioning {
                 return
         }
 
+        animating = true
         let duration = ZoomTransitioning.transitionDuration * (1.0 - interactiveProgress)
         UIView.animateWithDuration(
             duration,
@@ -156,6 +162,7 @@ extension ZoomInteractiveTransitioning {
                 transitionContext.finishInteractiveTransition()
                 transitionContext.completeTransition(true)
                 self.transitionContext = nil
+                self.animating = false
         })
     }
 
@@ -170,6 +177,7 @@ extension ZoomInteractiveTransitioning {
                 return
         }
 
+        animating = true
         let duration = ZoomTransitioning.transitionDuration * interactiveProgress
         UIView.animateWithDuration(
             duration,
@@ -186,6 +194,7 @@ extension ZoomInteractiveTransitioning {
                 transitionContext.cancelInteractiveTransition()
                 transitionContext.completeTransition(false)
                 self.transitionContext = nil
+                self.animating = false
         })
     }
 }
