@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1341481D3D401900E1C40A /* ZoomTransitioningFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1341471D3D401900E1C40A /* ZoomTransitioningFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE13414C1D3D401900E1C40A /* ZoomTransitioningFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1341451D3D401800E1C40A /* ZoomTransitioningFramework.framework */; };
+		CE13414D1D3D401900E1C40A /* ZoomTransitioningFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE1341451D3D401800E1C40A /* ZoomTransitioningFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE1D16F81D3D385A00F411EB /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D16F41D3D385A00F411EB /* ImageDetailViewController.swift */; };
 		CE1D16F91D3D385A00F411EB /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D16F51D3D385A00F411EB /* ImageListCell.swift */; };
 		CE1D16FA1D3D385A00F411EB /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D16F61D3D385A00F411EB /* ImageListViewController.swift */; };
@@ -24,7 +27,34 @@
 		CE29E7EA1D3D365E007508EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE29E7E81D3D365E007508EE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE13414A1D3D401900E1C40A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE29E7D41D3D365E007508EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1341441D3D401800E1C40A;
+			remoteInfo = ZoomTransitioningFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE1341511D3D401900E1C40A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE13414D1D3D401900E1C40A /* ZoomTransitioningFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CE1341451D3D401800E1C40A /* ZoomTransitioningFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZoomTransitioningFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1341471D3D401900E1C40A /* ZoomTransitioningFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomTransitioningFramework.h; sourceTree = "<group>"; };
+		CE1341491D3D401900E1C40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1D16F41D3D385A00F411EB /* ImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		CE1D16F51D3D385A00F411EB /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		CE1D16F61D3D385A00F411EB /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
@@ -45,16 +75,33 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CE29E7D91D3D365E007508EE /* Frameworks */ = {
+		CE1341411D3D401800E1C40A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE29E7D91D3D365E007508EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE13414C1D3D401900E1C40A /* ZoomTransitioningFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1341461D3D401900E1C40A /* ZoomTransitioningFramework */ = {
+			isa = PBXGroup;
+			children = (
+				CE1341471D3D401900E1C40A /* ZoomTransitioningFramework.h */,
+				CE1341491D3D401900E1C40A /* Info.plist */,
+			);
+			path = ZoomTransitioningFramework;
+			sourceTree = "<group>";
+		};
 		CE1D16FC1D3D38B500F411EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				CE29E7DE1D3D365E007508EE /* ZoomTransitioning */,
+				CE1341461D3D401900E1C40A /* ZoomTransitioningFramework */,
 				CE29E7DD1D3D365E007508EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				CE29E7DC1D3D365E007508EE /* ZoomTransitioning.app */,
+				CE1341451D3D401800E1C40A /* ZoomTransitioningFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,7 +153,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CE1341421D3D401800E1C40A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1341481D3D401900E1C40A /* ZoomTransitioningFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		CE1341441D3D401800E1C40A /* ZoomTransitioningFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1341501D3D401900E1C40A /* Build configuration list for PBXNativeTarget "ZoomTransitioningFramework" */;
+			buildPhases = (
+				CE1341401D3D401800E1C40A /* Sources */,
+				CE1341411D3D401800E1C40A /* Frameworks */,
+				CE1341421D3D401800E1C40A /* Headers */,
+				CE1341431D3D401800E1C40A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZoomTransitioningFramework;
+			productName = ZoomTransitioningFramework;
+			productReference = CE1341451D3D401800E1C40A /* ZoomTransitioningFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		CE29E7DB1D3D365E007508EE /* ZoomTransitioning */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE29E7EE1D3D365E007508EE /* Build configuration list for PBXNativeTarget "ZoomTransitioning" */;
@@ -112,10 +190,12 @@
 				CE29E7D81D3D365E007508EE /* Sources */,
 				CE29E7D91D3D365E007508EE /* Frameworks */,
 				CE29E7DA1D3D365E007508EE /* Resources */,
+				CE1341511D3D401900E1C40A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE13414B1D3D401900E1C40A /* PBXTargetDependency */,
 			);
 			name = ZoomTransitioning;
 			productName = ZoomTransitioning;
@@ -132,6 +212,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = com.shoji;
 				TargetAttributes = {
+					CE1341441D3D401800E1C40A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					CE29E7DB1D3D365E007508EE = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -151,11 +234,19 @@
 			projectRoot = "";
 			targets = (
 				CE29E7DB1D3D365E007508EE /* ZoomTransitioning */,
+				CE1341441D3D401800E1C40A /* ZoomTransitioningFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE1341431D3D401800E1C40A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE29E7DA1D3D365E007508EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +260,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE1341401D3D401800E1C40A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE29E7D81D3D365E007508EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +288,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CE13414B1D3D401900E1C40A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1341441D3D401800E1C40A /* ZoomTransitioningFramework */;
+			targetProxy = CE13414A1D3D401900E1C40A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		CE29E7E31D3D365E007508EE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -210,6 +316,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CE13414E1D3D401900E1C40A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ZoomTransitioningFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shoji.ZoomTransitioningFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE13414F1D3D401900E1C40A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ZoomTransitioningFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shoji.ZoomTransitioningFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CE29E7EC1D3D365E007508EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -320,6 +464,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE1341501D3D401900E1C40A /* Build configuration list for PBXNativeTarget "ZoomTransitioningFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE13414E1D3D401900E1C40A /* Debug */,
+				CE13414F1D3D401900E1C40A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CE29E7D71D3D365E007508EE /* Build configuration list for PBXProject "ZoomTransitioning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
