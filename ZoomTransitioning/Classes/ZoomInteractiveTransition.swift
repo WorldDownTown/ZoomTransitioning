@@ -25,7 +25,8 @@ public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransiti
         case .Cancelled, .Ended:
             guard let view = recognizer.view else { return }
             let progress = recognizer.translationInView(view).x / view.bounds.width
-            if progress > 0.3 {
+            let velocity = recognizer.velocityInView(view).x
+            if progress > 0.33 || velocity > 1000.0 {
                 finishInteractiveTransition()
             } else {
                 cancelInteractiveTransition()
