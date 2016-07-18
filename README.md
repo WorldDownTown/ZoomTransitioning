@@ -10,8 +10,8 @@ When you use this library with `UINavigationController`, you can pop view contro
 
 ![demo](images/demo.gif)
 
-## Example
-Run the example project in the Example directory. You don't have to `pod install`.
+## Demo
+Run the example project in the Demo directory. You don't have to `pod install` or `carthage update`.
 
 ## Usage
 Refer to the example project for details.
@@ -103,6 +103,13 @@ ZoomTransitioning is available through [CocoaPods](http://cocoapods.org). To ins
 
 ```ruby
 pod 'ZoomTransitioning'
+```
+
+### Carthage
+ZoomTransitioning is available through [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your Cartfile:
+
+```
+github "WorldDownTown/ZoomTransitioning"
 ```
 
 ## Author
