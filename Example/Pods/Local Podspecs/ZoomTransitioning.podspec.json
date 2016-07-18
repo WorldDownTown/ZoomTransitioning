@@ -1,9 +1,10 @@
 {
   "name": "ZoomTransitioning",
-  "version": "0.1.0",
-  "summary": "A short description of ZoomTransitioning.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "1.0.0",
+  "summary": "ZoomTransitioning provides a custom transition with image zooming animation.",
+  "description": "ZoomTransitioning provides a custom transition with image zooming animation.\nWhen you use this library with UINavigationController, you can pop view controller with edge swiping.",
   "homepage": "https://github.com/WorldDownTown/ZoomTransitioning",
+  "screenshots": "http://i.giphy.com/l0HlGSD26DXKSqWBi.gif",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,10 +14,12 @@
   },
   "source": {
     "git": "https://github.com/WorldDownTown/ZoomTransitioning.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
+  "social_media_url": "https://twitter.com/WorldDownTown",
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZoomTransitioning/Classes/*.swift"
+  "source_files": "ZoomTransitioning/Classes/*.swift",
+  "frameworks": "UIKit"
 }

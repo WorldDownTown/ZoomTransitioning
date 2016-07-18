@@ -1,5 +1,5 @@
 PODS:
-  - ZoomTransitioning (0.1.0)
+  - ZoomTransitioning (1.0.0)
 
 DEPENDENCIES:
   - ZoomTransitioning (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZoomTransitioning: 98dcd2eec7bb4b39d7280d7d11cca72bc21391d7
+  ZoomTransitioning: 5fd17bc7e8e06c78dcd693e05cde72e60d5d4901
 
 PODFILE CHECKSUM: d37832a2b1ffc5220e789d16c56bf84dc0202605
 
