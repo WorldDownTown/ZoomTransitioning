@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'ZoomTransitioning'
-  s.version               = '1.0.1'
+  s.version               = '1.1.0'
   s.summary               = 'ZoomTransitioning provides a custom transition with image zooming animation.'
   s.description           = <<-DESC
                             ZoomTransitioning provides a custom transition with image zooming animation.
