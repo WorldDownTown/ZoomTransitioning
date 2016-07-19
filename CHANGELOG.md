@@ -1,4 +1,4 @@
-# 1.1.1 Release notes (2016-07-17)
+# 1.1.2 Release notes (2016-07-19)
 
 ## Enhancements
 

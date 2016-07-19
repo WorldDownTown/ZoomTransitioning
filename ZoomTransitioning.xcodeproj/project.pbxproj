@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CE3611EF1D3DA70500E8A268 /* ZoomTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = CE3611EE1D3DA70500E8A268 /* ZoomTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEED3EF41D3DB0830083383E /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED3EEE1D3DB0830083383E /* UIImageView+extension.swift */; };
+		CEED3EF51D3DB0830083383E /* ZoomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED3EEF1D3DB0830083383E /* ZoomInteractiveTransition.swift */; };
+		CEED3EF61D3DB0830083383E /* ZoomNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED3EF01D3DB0830083383E /* ZoomNavigationControllerDelegate.swift */; };
+		CEED3EF71D3DB0830083383E /* ZoomTransitionDestinationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED3EF11D3DB0830083383E /* ZoomTransitionDestinationDelegate.swift */; };
+		CEED3EF81D3DB0830083383E /* ZoomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED3EF21D3DB0830083383E /* ZoomTransitioning.swift */; };
+		CEED3EF91D3DB0830083383E /* ZoomTransitionSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED3EF31D3DB0830083383E /* ZoomTransitionSourceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE3611EB1D3DA70500E8A268 /* ZoomTransitioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZoomTransitioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3611EE1D3DA70500E8A268 /* ZoomTransitioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomTransitioning.h; sourceTree = "<group>"; };
 		CE3611F01D3DA70500E8A268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEED3EEE1D3DB0830083383E /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
+		CEED3EEF1D3DB0830083383E /* ZoomInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomInteractiveTransition.swift; sourceTree = "<group>"; };
+		CEED3EF01D3DB0830083383E /* ZoomNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		CEED3EF11D3DB0830083383E /* ZoomTransitionDestinationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitionDestinationDelegate.swift; sourceTree = "<group>"; };
+		CEED3EF21D3DB0830083383E /* ZoomTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitioning.swift; sourceTree = "<group>"; };
+		CEED3EF31D3DB0830083383E /* ZoomTransitionSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitionSourceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +58,12 @@
 		CE3611ED1D3DA70500E8A268 /* ZoomTransitioning */ = {
 			isa = PBXGroup;
 			children = (
+				CEED3EEE1D3DB0830083383E /* UIImageView+extension.swift */,
+				CEED3EEF1D3DB0830083383E /* ZoomInteractiveTransition.swift */,
+				CEED3EF01D3DB0830083383E /* ZoomNavigationControllerDelegate.swift */,
+				CEED3EF11D3DB0830083383E /* ZoomTransitionDestinationDelegate.swift */,
+				CEED3EF21D3DB0830083383E /* ZoomTransitioning.swift */,
+				CEED3EF31D3DB0830083383E /* ZoomTransitionSourceDelegate.swift */,
 				CE3611EE1D3DA70500E8A268 /* ZoomTransitioning.h */,
 				CE3611F01D3DA70500E8A268 /* Info.plist */,
 			);
@@ -130,6 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEED3EF61D3DB0830083383E /* ZoomNavigationControllerDelegate.swift in Sources */,
+				CEED3EF51D3DB0830083383E /* ZoomInteractiveTransition.swift in Sources */,
+				CEED3EF41D3DB0830083383E /* UIImageView+extension.swift in Sources */,
+				CEED3EF91D3DB0830083383E /* ZoomTransitionSourceDelegate.swift in Sources */,
+				CEED3EF81D3DB0830083383E /* ZoomTransitioning.swift in Sources */,
+				CEED3EF71D3DB0830083383E /* ZoomTransitionDestinationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +254,7 @@
 		CE3611F41D3DA70500E8A268 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -240,12 +265,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoji.ZoomTransitioning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CE3611F51D3DA70500E8A268 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -278,6 +305,7 @@
 				CE3611F51D3DA70500E8A268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

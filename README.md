@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/:license-mit-blue.svg)](https://doge.mit-license.org)
 [![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)](https://developer.apple.com/swift)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ZoomTransitioning.svg?style=flat)](http://cocoadocs.org/docsets/ZoomTransitioning/)
 
 ## Overview
@@ -11,7 +12,7 @@ When you use this library with `UINavigationController`, you can pop view contro
 ![demo](images/demo.gif)
 
 ## Demo
-Run the example project in the Demo directory. You don't have to `pod install` or `carthage update`.
+Run the demo project in the Demo directory without `carthage update` or `pod install`.
 
 ## Usage
 Refer to the example project for details.
@@ -98,18 +99,18 @@ iOS 8.0 or higher
 
 ## Installation
 
-### CocoaPods
-ZoomTransitioning is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
-
-```ruby
-pod 'ZoomTransitioning'
-```
-
 ### Carthage
 ZoomTransitioning is available through [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your Cartfile:
 
 ```
 github "WorldDownTown/ZoomTransitioning"
+```
+
+### CocoaPods
+ZoomTransitioning is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod 'ZoomTransitioning'
 ```
 
 ## Author
