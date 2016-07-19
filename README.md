@@ -114,6 +114,10 @@ ZoomTransitioning is available through [CocoaPods](http://cocoapods.org). To ins
 pod 'ZoomTransitioning'
 ```
 
+### Manually
+1. Download and drop ```/ZoomTransitioning```folder in your project.  
+2. Congratulations!  
+
 ## Author
 WorldDownTown, WorldDownTown@gmail.com
 
