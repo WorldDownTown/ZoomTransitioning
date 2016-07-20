@@ -8,10 +8,17 @@
 
 import UIKit
 
-@objc public protocol ZoomTransitionDestinationDelegate: NSObjectProtocol {
+public protocol ZoomTransitionDestinationDelegate {
 
     func transitionDestinationImageViewFrame(forward forward: Bool) -> CGRect
-    optional func transitionDestinationWillBegin()
-    optional func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView)
-    optional func transitionDestinationDidCancel()
+    func transitionDestinationWillBegin()
+    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView)
+    func transitionDestinationDidCancel()
+}
+
+extension ZoomTransitionDestinationDelegate {
+
+    func transitionDestinationWillBegin() { /* Optional */ }
+    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) { /* Optional */ }
+    func transitionDestinationDidCancel() { /* Optional */ }
 }
