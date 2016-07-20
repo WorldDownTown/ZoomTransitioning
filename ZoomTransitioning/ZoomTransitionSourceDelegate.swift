@@ -8,11 +8,18 @@
 
 import UIKit
 
-@objc public protocol ZoomTransitionSourceDelegate: NSObjectProtocol {
+public protocol ZoomTransitionSourceDelegate {
 
     func transitionSourceImageView() -> UIImageView
     func transitionSourceImageViewFrame(forward forward: Bool) -> CGRect
-    optional func transitionSourceWillBegin()
-    optional func transitionSourceDidEnd()
-    optional func transitionSourceDidCancel()
+    func transitionSourceWillBegin()
+    func transitionSourceDidEnd()
+    func transitionSourceDidCancel()
+}
+
+extension ZoomTransitionSourceDelegate {
+
+    func transitionSourceWillBegin() { /* Optional */ }
+    func transitionSourceDidEnd() { /* Optional */ }
+    func transitionSourceDidCancel() { /* Optional */ }
 }
