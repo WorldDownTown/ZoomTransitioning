@@ -1,3 +1,9 @@
+# 1.1.3 Release notes (2016-08-26)
+
+## Refactoring
+
+- remove waste file
+
 # 1.1.2 Release notes (2016-07-19)
 
 ## Enhancements
