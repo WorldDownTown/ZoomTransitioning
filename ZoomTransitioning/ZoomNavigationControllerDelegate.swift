@@ -21,6 +21,7 @@ extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
     public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 
         if let gestureRecognizer = navigationController.interactivePopGestureRecognizer where gestureRecognizer.delegate !== zoomInteractiveTransition {
+            zoomInteractiveTransition.navigationController = navigationController
             gestureRecognizer.delegate = zoomInteractiveTransition
             gestureRecognizer.addTarget(zoomInteractiveTransition, action: #selector(ZoomInteractiveTransition.handlePanGestureRecognizer(_:)))
         }

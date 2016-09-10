@@ -128,7 +128,12 @@ extension ZoomTransitioning {
                 self.source.transitionSourceDidEnd?()
                 self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
 
-                let completed = !transitionContext.transitionWasCancelled()
+                let completed: Bool
+                if #available(iOS 10.0, *) {
+                    completed = true
+                } else {
+                    completed = !transitionContext.transitionWasCancelled()
+                }
                 transitionContext.completeTransition(completed)
         })
     }
