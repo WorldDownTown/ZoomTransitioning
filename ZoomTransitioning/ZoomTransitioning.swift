@@ -48,13 +48,13 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
 extension ZoomTransitioning {
 
     private func animateTransitionForPush(transitionContext: UIViewControllerContextTransitioning) {
-        guard let containerView = transitionContext.containerView(),
-            sourceView = transitionContext.viewForKey(UITransitionContextFromViewKey),
+        guard let sourceView = transitionContext.viewForKey(UITransitionContextFromViewKey),
             destinationView = transitionContext.viewForKey(UITransitionContextToViewKey) else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
                 return
         }
 
+        let containerView = transitionContext.containerView()
         let transitioningImageView = transitioningPushImageView()
 
         containerView.backgroundColor = sourceView.backgroundColor
@@ -90,13 +90,13 @@ extension ZoomTransitioning {
     }
 
     private func animateTransitionForPop(transitionContext: UIViewControllerContextTransitioning) {
-        guard let containerView = transitionContext.containerView(),
-            sourceView = transitionContext.viewForKey(UITransitionContextToViewKey),
+        guard let sourceView = transitionContext.viewForKey(UITransitionContextToViewKey),
             destinationView = transitionContext.viewForKey(UITransitionContextFromViewKey) else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
                 return
         }
 
+        let containerView = transitionContext.containerView()
         let transitioningImageView = transitioningPopImageView()
 
         containerView.backgroundColor = destinationView.backgroundColor
