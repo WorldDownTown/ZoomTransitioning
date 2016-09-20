@@ -11,8 +11,8 @@ import UIKit
 @objc public protocol ZoomTransitionSourceDelegate: NSObjectProtocol {
 
     func transitionSourceImageView() -> UIImageView
-    func transitionSourceImageViewFrame(forward forward: Bool) -> CGRect
-    optional func transitionSourceWillBegin()
-    optional func transitionSourceDidEnd()
-    optional func transitionSourceDidCancel()
+    func transitionSourceImageViewFrame(forward: Bool) -> CGRect
+    @objc optional func transitionSourceWillBegin()
+    @objc optional func transitionSourceDidEnd()
+    @objc optional func transitionSourceDidCancel()
 }

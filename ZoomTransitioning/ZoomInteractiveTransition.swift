@@ -11,31 +11,31 @@ import UIKit
 public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransition {
 
     weak var navigationController: UINavigationController?
-    private weak var viewController: UIViewController?
-    private var interactive = false
+    fileprivate weak var viewController: UIViewController?
+    fileprivate var interactive = false
 
     var interactionController: ZoomInteractiveTransition? {
         return interactive ? self : nil
     }
 
-    @objc func handlePanGestureRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
+    @objc func handle(recognizer: UIScreenEdgePanGestureRecognizer) {
         switch recognizer.state {
-        case .Changed:
+        case .changed:
             guard let view = recognizer.view else { return }
-            let progress = recognizer.translationInView(view).x / view.bounds.width
-            updateInteractiveTransition(progress)
-        case .Cancelled, .Ended:
+            let progress = recognizer.translation(in: view).x / view.bounds.width
+            update(progress)
+        case .cancelled, .ended:
             guard let view = recognizer.view else { return }
-            let progress = recognizer.translationInView(view).x / view.bounds.width
-            let velocity = recognizer.velocityInView(view).x
+            let progress = recognizer.translation(in: view).x / view.bounds.width
+            let velocity = recognizer.velocity(in: view).x
             if progress > 0.33 || velocity > 1000.0 {
-                finishInteractiveTransition()
+                finish()
             } else {
                 if #available(iOS 10.0, *), let viewController = viewController {
                     navigationController?.viewControllers.append(viewController)
-                    updateInteractiveTransition(0.0)
+                    update(0.0)
                 }
-                cancelInteractiveTransition()
+                cancel()
             }
             interactive = false
         default:
@@ -49,15 +49,15 @@ public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransiti
 
 extension ZoomInteractiveTransition: UIGestureRecognizerDelegate {
 
-    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         interactive = true
         if #available(iOS 10.0, *) {
-            viewController = navigationController?.popViewControllerAnimated(true)
+            viewController = navigationController?.popViewController(animated: true)
         }
         return true
     }
 
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return gestureRecognizer is UIScreenEdgePanGestureRecognizer
     }
 }

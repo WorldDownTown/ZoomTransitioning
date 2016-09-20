@@ -11,7 +11,7 @@ import UIKit
 class ImageOnlyViewController: UIViewController {
 
     var image: UIImage?
-    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet fileprivate var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
