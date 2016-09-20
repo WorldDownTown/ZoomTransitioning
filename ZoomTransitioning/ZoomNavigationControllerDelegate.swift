@@ -10,7 +10,7 @@ import UIKit
 
 public final class ZoomNavigationControllerDelegate: NSObject {
 
-    private let zoomInteractiveTransition = ZoomInteractiveTransition()
+    fileprivate let zoomInteractiveTransition = ZoomInteractiveTransition()
 }
 
 
@@ -18,22 +18,22 @@ public final class ZoomNavigationControllerDelegate: NSObject {
 
 extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
 
-    public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 
-        if let gestureRecognizer = navigationController.interactivePopGestureRecognizer where gestureRecognizer.delegate !== zoomInteractiveTransition {
+        if let gestureRecognizer = navigationController.interactivePopGestureRecognizer, gestureRecognizer.delegate !== zoomInteractiveTransition {
             zoomInteractiveTransition.navigationController = navigationController
             gestureRecognizer.delegate = zoomInteractiveTransition
-            gestureRecognizer.addTarget(zoomInteractiveTransition, action: #selector(ZoomInteractiveTransition.handlePanGestureRecognizer(_:)))
+            gestureRecognizer.addTarget(zoomInteractiveTransition, action: #selector(ZoomInteractiveTransition.handle(recognizer:)))
         }
 
         return zoomInteractiveTransition.interactionController
     }
 
-    public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
-        if let source = fromVC as? ZoomTransitionSourceDelegate, destination = toVC as? ZoomTransitionDestinationDelegate where operation == .Push {
+        if let source = fromVC as? ZoomTransitionSourceDelegate, let destination = toVC as? ZoomTransitionDestinationDelegate, operation == .push {
             return ZoomTransitioning(source: source, destination: destination, forward: true)
-        } else if let source = toVC as? ZoomTransitionSourceDelegate, destination = fromVC as? ZoomTransitionDestinationDelegate where operation == .Pop {
+        } else if let source = toVC as? ZoomTransitionSourceDelegate, let destination = fromVC as? ZoomTransitionDestinationDelegate, operation == .pop {
             return ZoomTransitioning(source: source, destination: destination, forward: false)
         }
         return nil

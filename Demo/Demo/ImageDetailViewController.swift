@@ -10,10 +10,10 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
 
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var largeImageView: UIImageView!
-    @IBOutlet private weak var smallImageView1: UIImageView!
-    @IBOutlet private weak var smallImageView2: UIImageView!
+    @IBOutlet fileprivate weak var scrollView: UIScrollView!
+    @IBOutlet fileprivate weak var largeImageView: UIImageView!
+    @IBOutlet fileprivate weak var smallImageView1: UIImageView!
+    @IBOutlet fileprivate weak var smallImageView2: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,14 @@ class ImageDetailViewController: UIViewController {
         smallImageView2.image = randomImage()
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
 
-        guard let vc = segue.destinationViewController as? ImageOnlyViewController else { return }
+        guard let vc = segue.destination as? ImageOnlyViewController else { return }
         vc.image = smallImageView2.image
     }
 
-    private func randomImage() -> UIImage {
+    fileprivate func randomImage() -> UIImage {
         let num = Int(arc4random() % 10)
         return UIImage(named: "image\(num)")!
     }
@@ -44,20 +44,20 @@ extension ImageDetailViewController: ZoomTransitionSourceDelegate {
         return smallImageView1
     }
 
-    func transitionSourceImageViewFrame(forward forward: Bool) -> CGRect {
-        return smallImageView1.convertRect(smallImageView1.bounds, toView: view)
+    func transitionSourceImageViewFrame(forward: Bool) -> CGRect {
+        return smallImageView1.convert(smallImageView1.bounds, to: view)
     }
 
     func transitionSourceWillBegin() {
-        smallImageView1.hidden = true
+        smallImageView1.isHidden = true
     }
 
     func transitionSourceDidEnd() {
-        smallImageView1.hidden = false
+        smallImageView1.isHidden = false
     }
 
     func transitionSourceDidCancel() {
-        smallImageView1.hidden = false
+        smallImageView1.isHidden = false
     }
 }
 
@@ -66,7 +66,7 @@ extension ImageDetailViewController: ZoomTransitionSourceDelegate {
 
 extension ImageDetailViewController: ZoomTransitionDestinationDelegate {
 
-    func transitionDestinationImageViewFrame(forward forward: Bool) -> CGRect {
+    func transitionDestinationImageViewFrame(forward: Bool) -> CGRect {
         if forward {
             let x: CGFloat = 0.0
             let y = topLayoutGuide.length
@@ -74,20 +74,20 @@ extension ImageDetailViewController: ZoomTransitionDestinationDelegate {
             let height = width * 2.0 / 3.0
             return CGRect(x: x, y: y, width: width, height: height)
         } else {
-            return largeImageView.convertRect(largeImageView.bounds, toView: view)
+            return largeImageView.convert(largeImageView.bounds, to: view)
         }
     }
 
     func transitionDestinationWillBegin() {
-        largeImageView.hidden = true
+        largeImageView.isHidden = true
     }
 
     func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) {
-        largeImageView.hidden = false
+        largeImageView.isHidden = false
         largeImageView.image = imageView.image
     }
 
     func transitionDestinationDidCancel() {
-        largeImageView.hidden = false
+        largeImageView.isHidden = false
     }
 }
