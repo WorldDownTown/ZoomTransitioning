@@ -96,7 +96,10 @@ class NavigationController: UINavigationController {
 ```
 
 ## Requirements
-iOS 8.0 or higher
+- Swift 3.0
+- iOS 8.0 or later
+
+If you use Swift 2.2, use [1.3.0](https://github.com/WorldDownTown/ZoomTransitioning/releases/tag/1.3.0)
 
 ## Installation
 
@@ -116,7 +119,7 @@ pod 'ZoomTransitioning'
 
 ### Manually
 1. Download and drop ```/ZoomTransitioning```folder in your project.  
-2. Congratulations!  
+2. Congratulations!
 
 ## Author
 WorldDownTown, WorldDownTown@gmail.com
