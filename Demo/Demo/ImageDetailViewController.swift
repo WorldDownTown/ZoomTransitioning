@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ImageDetailViewController: UIViewController {
+final class ImageDetailViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var scrollView: UIScrollView!
     @IBOutlet fileprivate weak var largeImageView: UIImageView!
     @IBOutlet fileprivate weak var smallImageView1: UIImageView!
-    @IBOutlet fileprivate weak var smallImageView2: UIImageView!
+    @IBOutlet private weak var smallImageView2: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        smallImageView1.image = randomImage()
-        smallImageView2.image = randomImage()
+        smallImageView1.image = randomImage
+        smallImageView2.image = randomImage
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,8 +28,8 @@ class ImageDetailViewController: UIViewController {
         vc.image = smallImageView2.image
     }
 
-    fileprivate func randomImage() -> UIImage {
-        let num = Int(arc4random() % 10)
+    private var randomImage: UIImage {
+        let num: Int = Int(arc4random() % 10)
         return UIImage(named: "image\(num)")!
     }
 }

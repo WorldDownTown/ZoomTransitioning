@@ -40,14 +40,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
             animateTransitionForPop(transitionContext)
         }
     }
-}
 
-
-// MARK: - Private
-
-extension ZoomTransitioning {
-
-    fileprivate func animateTransitionForPush(_ transitionContext: UIViewControllerContextTransitioning) {
+    private func animateTransitionForPush(_ transitionContext: UIViewControllerContextTransitioning) {
         guard let sourceView = transitionContext.view(forKey: UITransitionContextViewKey.from),
             let destinationView = transitionContext.view(forKey: UITransitionContextViewKey.to) else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -89,7 +83,7 @@ extension ZoomTransitioning {
         })
     }
 
-    fileprivate func animateTransitionForPop(_ transitionContext: UIViewControllerContextTransitioning) {
+    private func animateTransitionForPop(_ transitionContext: UIViewControllerContextTransitioning) {
         guard let sourceView = transitionContext.view(forKey: UITransitionContextViewKey.to),
             let destinationView = transitionContext.view(forKey: UITransitionContextViewKey.from) else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -138,13 +132,13 @@ extension ZoomTransitioning {
         })
     }
 
-    fileprivate func transitioningPushImageView() -> UIImageView {
+    private func transitioningPushImageView() -> UIImageView {
         let imageView = source.transitionSourceImageView()
         let frame = source.transitionSourceImageViewFrame(forward: forward)
         return UIImageView(baseImageView: imageView, frame: frame)
     }
 
-    fileprivate func transitioningPopImageView() -> UIImageView {
+    private func transitioningPopImageView() -> UIImageView {
         let imageView = source.transitionSourceImageView()
         let frame = destination.transitionDestinationImageViewFrame(forward: forward)
         return UIImageView(baseImageView: imageView, frame: frame)

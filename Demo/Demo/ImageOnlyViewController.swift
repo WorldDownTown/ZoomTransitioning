@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ImageOnlyViewController: UIViewController {
+final class ImageOnlyViewController: UIViewController {
 
     var image: UIImage?
-    @IBOutlet fileprivate var imageView: UIImageView!
+    @IBOutlet private var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
