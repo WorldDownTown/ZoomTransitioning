@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageListViewController: UICollectionViewController {
+final class ImageListViewController: UICollectionViewController {
 
     fileprivate var selectedImageView: UIImageView?
     override func viewDidLoad() {
