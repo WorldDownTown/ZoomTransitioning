@@ -9,8 +9,7 @@
 import UIKit
 
 public final class ZoomNavigationControllerDelegate: NSObject {
-
-    fileprivate let zoomInteractiveTransition = ZoomInteractiveTransition()
+    let zoomInteractiveTransition = ZoomInteractiveTransition()
 }
 
 
@@ -19,12 +18,8 @@ public final class ZoomNavigationControllerDelegate: NSObject {
 extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
 
     public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
 
-        if let gestureRecognizer = navigationController.interactivePopGestureRecognizer, gestureRecognizer.delegate !== zoomInteractiveTransition {
-            zoomInteractiveTransition.navigationController = navigationController
-            gestureRecognizer.delegate = zoomInteractiveTransition
-            gestureRecognizer.addTarget(zoomInteractiveTransition, action: #selector(ZoomInteractiveTransition.handle(recognizer:)))
-        }
 
         return zoomInteractiveTransition.interactionController
     }
@@ -38,4 +33,6 @@ extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
         }
         return nil
     }
+
+
 }
