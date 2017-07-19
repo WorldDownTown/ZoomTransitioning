@@ -10,7 +10,7 @@ import UIKit
 
 public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransition {
     weak var navigationController: UINavigationController?
-    weak var popGestureRecognizer: UIScreenEdgePanGestureRecognizer?
+    weak var zoomPopGestureRecognizer: UIScreenEdgePanGestureRecognizer?
     fileprivate weak var viewController: UIViewController?
     fileprivate var interactive = false
 
@@ -53,7 +53,7 @@ extension ZoomInteractiveTransition: UIGestureRecognizerDelegate {
         let isDestinationController = navigationController?.viewControllers.last is ZoomTransitionDestinationDelegate
         if gestureRecognizer === navigationController?.interactivePopGestureRecognizer {
             return !isDestinationController
-        } else if gestureRecognizer === popGestureRecognizer {
+        } else if gestureRecognizer === zoomPopGestureRecognizer {
             if isDestinationController {
                 interactive = true
                 if #available(iOS 10.0, *) {

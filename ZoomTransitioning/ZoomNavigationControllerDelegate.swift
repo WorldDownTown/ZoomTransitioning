@@ -9,7 +9,8 @@
 import UIKit
 
 public final class ZoomNavigationControllerDelegate: NSObject {
-    let zoomInteractiveTransition = ZoomInteractiveTransition()
+    fileprivate let zoomInteractiveTransition = ZoomInteractiveTransition()
+    fileprivate let zoomPopGestureRecognizer = UIScreenEdgePanGestureRecognizer()
 }
 
 
@@ -17,9 +18,25 @@ public final class ZoomNavigationControllerDelegate: NSObject {
 
 extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
 
-    public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         
-
+        if zoomPopGestureRecognizer.delegate !== zoomInteractiveTransition {
+            zoomPopGestureRecognizer.delegate = zoomInteractiveTransition
+            zoomPopGestureRecognizer.addTarget(zoomInteractiveTransition, action: #selector(ZoomInteractiveTransition.handle(recognizer:)))
+            zoomPopGestureRecognizer.edges = .left
+            navigationController.view.addGestureRecognizer(zoomPopGestureRecognizer)
+            
+            zoomInteractiveTransition.zoomPopGestureRecognizer = zoomPopGestureRecognizer
+        }
+        
+        if let interactivePopGestureRecognizer = navigationController.interactivePopGestureRecognizer, interactivePopGestureRecognizer.delegate !== zoomInteractiveTransition {
+  
+            zoomInteractiveTransition.navigationController = navigationController
+            interactivePopGestureRecognizer.delegate = zoomInteractiveTransition
+        }
+    }
+    
+    public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 
         return zoomInteractiveTransition.interactionController
     }
