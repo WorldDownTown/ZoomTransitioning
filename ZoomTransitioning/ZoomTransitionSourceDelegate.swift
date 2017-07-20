@@ -12,7 +12,10 @@ import UIKit
 
     func transitionSourceImageView() -> UIImageView
     func transitionSourceImageViewFrame(forward: Bool) -> CGRect
-    @objc optional func transitionSourceWillBegin()
-    @objc optional func transitionSourceDidEnd()
+    @objc optional func transitionSourceWillBegin(forward: Bool)
+    @objc optional func transitionSourceDidEnd(forward: Bool)
     @objc optional func transitionSourceDidCancel()
+    
+    @objc optional func zoomDuration() -> TimeInterval
+    @objc optional func zoomAnimation(animations: @escaping () -> Void, completion: @escaping () -> Void)
 }

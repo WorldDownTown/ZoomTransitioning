@@ -72,15 +72,27 @@ extension ImageListViewController: ZoomTransitionSourceDelegate {
         return selectedImageView.convert(selectedImageView.bounds, to: view)
     }
 
-    func transitionSourceWillBegin() {
+    func transitionSourceWillBegin(forward: Bool) {
         selectedImageView?.isHidden = true
     }
 
-    func transitionSourceDidEnd() {
+    func transitionSourceDidEnd(forward: Bool) {
         selectedImageView?.isHidden = false
     }
 
     func transitionSourceDidCancel() {
         selectedImageView?.isHidden = false
+    }
+    
+    func zoomDuration() -> TimeInterval {
+        return 0.4
+    }
+    
+    func zoomAnimation(animations: @escaping () -> Void, completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 2, options: .curveEaseInOut, animations: { 
+            animations()
+        }) { (_) in
+            completion()
+        }
     }
 }

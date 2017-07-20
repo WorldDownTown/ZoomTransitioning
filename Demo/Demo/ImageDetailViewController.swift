@@ -47,11 +47,11 @@ extension ImageDetailViewController: ZoomTransitionSourceDelegate {
         return smallImageView1.convert(smallImageView1.bounds, to: view)
     }
 
-    func transitionSourceWillBegin() {
+    func transitionSourceWillBegin(forward: Bool) {
         smallImageView1.isHidden = true
     }
 
-    func transitionSourceDidEnd() {
+    func transitionSourceDidEnd(forward: Bool) {
         smallImageView1.isHidden = false
     }
 
@@ -77,7 +77,7 @@ extension ImageDetailViewController: ZoomTransitionDestinationDelegate {
         }
     }
 
-    func transitionDestinationWillBegin() {
+    func transitionDestinationWillBegin(forward: Bool) {
         largeImageView.isHidden = true
     }
 

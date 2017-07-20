@@ -50,6 +50,4 @@ extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
         }
         return nil
     }
-
-
 }

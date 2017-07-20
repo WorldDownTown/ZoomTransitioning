@@ -9,12 +9,22 @@
 import UIKit
 
 public final class ZoomTransitioning: NSObject {
-
-    static let transitionDuration: TimeInterval = 0.3
     fileprivate let source: ZoomTransitionSourceDelegate
     fileprivate let destination: ZoomTransitionDestinationDelegate
     fileprivate let forward: Bool
 
+    open func runAnimation(animations: @escaping () -> Swift.Void, completion: @escaping (() -> Swift.Void)) {
+        if source.responds(to: #selector(ZoomTransitionSourceDelegate.zoomAnimation)) {
+            source.zoomAnimation?(animations: animations, completion: completion)
+        } else {
+            UIView.animate(withDuration: source.zoomDuration?() ?? 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                animations()
+            }) { _ in
+                completion()
+            }
+        }
+    }
+    
     required public init(source: ZoomTransitionSourceDelegate, destination: ZoomTransitionDestinationDelegate, forward: Bool) {
         self.source = source
         self.destination = destination
@@ -30,7 +40,7 @@ public final class ZoomTransitioning: NSObject {
 extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
 
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return ZoomTransitioning.transitionDuration
+        return source.zoomDuration?() ?? 0.3
     }
 
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -58,29 +68,24 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         containerView.insertSubview(destinationView, belowSubview: sourceView)
         containerView.addSubview(transitioningImageView)
 
-        source.transitionSourceWillBegin?()
-        destination.transitionDestinationWillBegin?()
+        source.transitionSourceWillBegin?(forward: self.forward)
+        destination.transitionDestinationWillBegin?(forward: self.forward)
 
-        UIView.animate(
-            withDuration: ZoomTransitioning.transitionDuration,
-            delay: 0.0,
-            options: .curveEaseOut,
-            animations: {
-                sourceView.alpha = 0.0
-                destinationView.alpha = 1.0
-                transitioningImageView.frame = self.destination.transitionDestinationImageViewFrame(forward: self.forward)
-            },
-            completion: { _ in
-                sourceView.alpha = 1.0
-                transitioningImageView.alpha = 0.0
-                transitioningImageView.removeFromSuperview()
-
-                self.source.transitionSourceDidEnd?()
-                self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
-
-                let completed = !transitionContext.transitionWasCancelled
-                transitionContext.completeTransition(completed)
-        })
+        self.runAnimation(animations: { 
+            sourceView.alpha = 0.0
+            destinationView.alpha = 1.0
+            transitioningImageView.frame = self.destination.transitionDestinationImageViewFrame(forward: self.forward)
+        }) {
+            sourceView.alpha = 1.0
+            transitioningImageView.alpha = 0.0
+            transitioningImageView.removeFromSuperview()
+            
+            self.source.transitionSourceDidEnd?(forward: self.forward)
+            self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
+            
+            let completed = !transitionContext.transitionWasCancelled
+            transitionContext.completeTransition(completed)
+        }
     }
 
     private func animateTransitionForPop(_ transitionContext: UIViewControllerContextTransitioning) {
@@ -100,36 +105,32 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         containerView.insertSubview(sourceView, belowSubview: destinationView)
         containerView.addSubview(transitioningImageView)
 
-        source.transitionSourceWillBegin?()
-        destination.transitionDestinationWillBegin?()
+        source.transitionSourceWillBegin?(forward: self.forward)
+        destination.transitionDestinationWillBegin?(forward: self.forward)
 
         if transitioningImageView.frame.maxY < 0.0 {
             transitioningImageView.frame.origin.y = -transitioningImageView.frame.height
         }
-        UIView.animate(
-            withDuration: ZoomTransitioning.transitionDuration,
-            delay: 0.0,
-            options: .curveEaseOut,
-            animations: {
-                destinationView.alpha = 0.0
-                sourceView.alpha = 1.0
-                transitioningImageView.frame = self.source.transitionSourceImageViewFrame(forward: self.forward)
-            },
-            completion: { _ in
-                destinationView.alpha = 1.0
-                transitioningImageView.removeFromSuperview()
-
-                self.source.transitionSourceDidEnd?()
-                self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
-
-                let completed: Bool
-                if #available(iOS 10.0, *) {
-                    completed = true
-                } else {
-                    completed = !transitionContext.transitionWasCancelled
-                }
-                transitionContext.completeTransition(completed)
-        })
+        
+        self.runAnimation(animations: { 
+            destinationView.alpha = 0.0
+            sourceView.alpha = 1.0
+            transitioningImageView.frame = self.source.transitionSourceImageViewFrame(forward: self.forward)
+        }) {
+            destinationView.alpha = 1.0
+            transitioningImageView.removeFromSuperview()
+            
+            self.source.transitionSourceDidEnd?(forward: self.forward)
+            self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
+            
+            let completed: Bool
+            if #available(iOS 10.0, *) {
+                completed = true
+            } else {
+                completed = !transitionContext.transitionWasCancelled
+            }
+            transitionContext.completeTransition(completed)
+        }
     }
 
     private func transitioningPushImageView() -> UIImageView {

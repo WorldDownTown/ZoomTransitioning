@@ -36,6 +36,13 @@ public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransiti
                     update(0.0)
                 }
                 cancel()
+                
+                if let viewController = viewController as? ZoomTransitionDestinationDelegate {
+                    viewController.transitionDestinationDidCancel?()
+                }
+                if let viewController = navigationController?.viewControllers.last as? ZoomTransitionSourceDelegate {
+                    viewController.transitionSourceDidCancel?()
+                }
             }
             interactive = false
         default:
