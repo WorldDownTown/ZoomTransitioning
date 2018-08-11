@@ -11,9 +11,9 @@ import UIKit
 public final class ZoomTransitioning: NSObject {
 
     static let transitionDuration: TimeInterval = 0.3
-    fileprivate let source: ZoomTransitionSourceDelegate
-    fileprivate let destination: ZoomTransitionDestinationDelegate
-    fileprivate let forward: Bool
+    private let source: ZoomTransitionSourceDelegate
+    private let destination: ZoomTransitionDestinationDelegate
+    private let forward: Bool
 
     required public init(source: ZoomTransitionSourceDelegate, destination: ZoomTransitionDestinationDelegate, forward: Bool) {
         self.source = source

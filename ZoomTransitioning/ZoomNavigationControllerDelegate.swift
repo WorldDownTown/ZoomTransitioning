@@ -10,7 +10,7 @@ import UIKit
 
 public final class ZoomNavigationControllerDelegate: NSObject {
 
-    fileprivate let zoomInteractiveTransition = ZoomInteractiveTransition()
+    private let zoomInteractiveTransition = ZoomInteractiveTransition()
 }
 
 

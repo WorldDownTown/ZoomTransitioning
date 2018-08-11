@@ -10,7 +10,7 @@ import UIKit
 
 final class ImageListViewController: UICollectionViewController {
 
-    fileprivate var selectedImageView: UIImageView?
+    private var selectedImageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,7 +53,7 @@ extension ImageListViewController {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         let space: CGFloat = 8.0
-        let length = (collectionView.frame.width - space * 3.0) / 2.0
+        let length: CGFloat = (collectionView.frame.width - space * 3.0) / 2.0
         return CGSize(width: length, height: length)
     }
 }

@@ -11,8 +11,8 @@ import UIKit
 public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransition {
 
     weak var navigationController: UINavigationController?
-    fileprivate weak var viewController: UIViewController?
-    fileprivate var interactive = false
+    private weak var viewController: UIViewController?
+    private var interactive = false
 
     var interactionController: ZoomInteractiveTransition? {
         return interactive ? self : nil

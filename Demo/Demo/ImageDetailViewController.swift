@@ -10,8 +10,8 @@ import UIKit
 
 final class ImageDetailViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var largeImageView: UIImageView!
-    @IBOutlet fileprivate weak var smallImageView1: UIImageView!
+    @IBOutlet private weak var largeImageView: UIImageView!
+    @IBOutlet private weak var smallImageView1: UIImageView!
     @IBOutlet private weak var smallImageView2: UIImageView!
 
     override func viewDidLoad() {
