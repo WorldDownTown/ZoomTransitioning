@@ -58,8 +58,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         containerView.insertSubview(destinationView, belowSubview: sourceView)
         containerView.addSubview(transitioningImageView)
 
-        source.transitionSourceWillBegin?()
-        destination.transitionDestinationWillBegin?()
+        source.transitionSourceWillBegin()
+        destination.transitionDestinationWillBegin()
 
         UIView.animate(
             withDuration: ZoomTransitioning.transitionDuration,
@@ -75,8 +75,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                 transitioningImageView.alpha = 0.0
                 transitioningImageView.removeFromSuperview()
 
-                self.source.transitionSourceDidEnd?()
-                self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
+                self.source.transitionSourceDidEnd()
+                self.destination.transitionDestinationDidEnd(transitioningImageView: transitioningImageView)
 
                 let completed = !transitionContext.transitionWasCancelled
                 transitionContext.completeTransition(completed)
@@ -100,8 +100,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         containerView.insertSubview(sourceView, belowSubview: destinationView)
         containerView.addSubview(transitioningImageView)
 
-        source.transitionSourceWillBegin?()
-        destination.transitionDestinationWillBegin?()
+        source.transitionSourceWillBegin()
+        destination.transitionDestinationWillBegin()
 
         if transitioningImageView.frame.maxY < 0.0 {
             transitioningImageView.frame.origin.y = -transitioningImageView.frame.height
@@ -119,8 +119,8 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                 destinationView.alpha = 1.0
                 transitioningImageView.removeFromSuperview()
 
-                self.source.transitionSourceDidEnd?()
-                self.destination.transitionDestinationDidEnd?(transitioningImageView: transitioningImageView)
+                self.source.transitionSourceDidEnd()
+                self.destination.transitionDestinationDidEnd(transitioningImageView: transitioningImageView)
 
                 let completed: Bool
                 if #available(iOS 10.0, *) {
