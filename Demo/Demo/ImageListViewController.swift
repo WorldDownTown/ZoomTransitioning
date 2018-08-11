@@ -49,9 +49,9 @@ extension ImageListViewController {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ImageListViewController {
+extension ImageListViewController: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let space: CGFloat = 8.0
         let length: CGFloat = (collectionView.frame.width - space * 3.0) / 2.0
         return CGSize(width: length, height: length)
