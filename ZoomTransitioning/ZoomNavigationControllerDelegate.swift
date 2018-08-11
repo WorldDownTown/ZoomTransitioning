@@ -9,15 +9,13 @@
 import UIKit
 
 public final class ZoomNavigationControllerDelegate: NSObject {
-
-    private let zoomInteractiveTransition = ZoomInteractiveTransition()
+    private let zoomInteractiveTransition: ZoomInteractiveTransition = .init()
 }
 
 
 // MARK: - UINavigationControllerDelegate
 
 extension ZoomNavigationControllerDelegate: UINavigationControllerDelegate {
-
     public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 
         if let gestureRecognizer = navigationController.interactivePopGestureRecognizer, gestureRecognizer.delegate !== zoomInteractiveTransition {

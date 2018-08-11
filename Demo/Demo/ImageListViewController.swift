@@ -9,7 +9,6 @@
 import UIKit
 
 final class ImageListViewController: UICollectionViewController {
-
     private var selectedImageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,6 @@ final class ImageListViewController: UICollectionViewController {
 // MARK: - UICollectionViewDataSource
 
 extension ImageListViewController {
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -39,7 +37,6 @@ extension ImageListViewController {
 // MARK: - UICollectionViewDelegate
 
 extension ImageListViewController {
-
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ImageListCell
         selectedImageView = cell.imageView
@@ -50,10 +47,10 @@ extension ImageListViewController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ImageListViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let space: CGFloat = 8.0
-        let length: CGFloat = (collectionView.frame.width - space * 3.0) / 2.0
+        let space: CGFloat = 8
+        let columns: CGFloat = 2
+        let length: CGFloat = (collectionView.frame.width - space * (columns + 1)) / columns
         return CGSize(width: length, height: length)
     }
 }
@@ -62,13 +59,12 @@ extension ImageListViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - ZoomTransitionSourceDelegate
 
 extension ImageListViewController: ZoomTransitionSourceDelegate {
-
     func transitionSourceImageView() -> UIImageView {
         return selectedImageView ?? UIImageView()
     }
 
     func transitionSourceImageViewFrame(forward: Bool) -> CGRect {
-        guard let selectedImageView = selectedImageView else { return CGRect.zero }
+        guard let selectedImageView = selectedImageView else { return .zero }
         return selectedImageView.convert(selectedImageView.bounds, to: view)
     }
 

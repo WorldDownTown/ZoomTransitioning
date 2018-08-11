@@ -9,9 +9,8 @@
 import UIKit
 
 extension UIImageView {
-
     convenience init(baseImageView: UIImageView, frame: CGRect) {
-        self.init(frame: CGRect.zero)
+        self.init(frame: .zero)
 
         image = baseImageView.image
         contentMode = baseImageView.contentMode

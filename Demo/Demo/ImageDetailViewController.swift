@@ -9,7 +9,6 @@
 import UIKit
 
 final class ImageDetailViewController: UIViewController {
-
     @IBOutlet private weak var largeImageView: UIImageView!
     @IBOutlet private weak var smallImageView1: UIImageView!
     @IBOutlet private weak var smallImageView2: UIImageView!
@@ -38,7 +37,6 @@ final class ImageDetailViewController: UIViewController {
 // MARK: - ZoomTransitionSourceDelegate
 
 extension ImageDetailViewController: ZoomTransitionSourceDelegate {
-
     func transitionSourceImageView() -> UIImageView {
         return smallImageView1
     }
@@ -64,13 +62,12 @@ extension ImageDetailViewController: ZoomTransitionSourceDelegate {
 // MARK: - ZoomTransitionDestinationDelegate
 
 extension ImageDetailViewController: ZoomTransitionDestinationDelegate {
-
     func transitionDestinationImageViewFrame(forward: Bool) -> CGRect {
         if forward {
-            let x: CGFloat = 0.0
-            let y = topLayoutGuide.length
-            let width = view.frame.width
-            let height = width * 2.0 / 3.0
+            let x: CGFloat = 0
+            let y: CGFloat = topLayoutGuide.length
+            let width: CGFloat = view.frame.width
+            let height: CGFloat = width * 2 / 3
             return CGRect(x: x, y: y, width: width, height: height)
         } else {
             return largeImageView.convert(largeImageView.bounds, to: view)

@@ -9,7 +9,6 @@
 import UIKit
 
 final class ImageOnlyViewController: UIViewController {
-
     var image: UIImage?
     @IBOutlet private var imageView: UIImageView!
 

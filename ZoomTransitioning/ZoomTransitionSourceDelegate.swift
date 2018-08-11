@@ -9,7 +9,6 @@
 import UIKit
 
 public protocol ZoomTransitionSourceDelegate {
-
     func transitionSourceImageView() -> UIImageView
     func transitionSourceImageViewFrame(forward: Bool) -> CGRect
     func transitionSourceWillBegin()
@@ -18,7 +17,6 @@ public protocol ZoomTransitionSourceDelegate {
 }
 
 extension ZoomTransitionSourceDelegate {
-
     func transitionSourceWillBegin() {}
     func transitionSourceDidEnd() {}
     func transitionSourceDidCancel() {}

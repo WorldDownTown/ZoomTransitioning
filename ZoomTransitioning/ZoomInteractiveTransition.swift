@@ -9,10 +9,9 @@
 import UIKit
 
 public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransition {
-
     weak var navigationController: UINavigationController?
     private weak var viewController: UIViewController?
-    private var interactive = false
+    private var interactive: Bool = false
 
     var interactionController: ZoomInteractiveTransition? {
         return interactive ? self : nil
@@ -28,12 +27,12 @@ public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransiti
             guard let view = recognizer.view else { return }
             let progress = recognizer.translation(in: view).x / view.bounds.width
             let velocity = recognizer.velocity(in: view).x
-            if progress > 0.33 || velocity > 1000.0 {
+            if progress > 0.33 || velocity > 1000 {
                 finish()
             } else {
                 if #available(iOS 10.0, *), let viewController = viewController {
                     navigationController?.viewControllers.append(viewController)
-                    update(0.0)
+                    update(0)
                 }
                 cancel()
             }
@@ -48,7 +47,6 @@ public final class ZoomInteractiveTransition: UIPercentDrivenInteractiveTransiti
 // MARK: - UIGestureRecognizerDelegate
 
 extension ZoomInteractiveTransition: UIGestureRecognizerDelegate {
-
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         interactive = true
         if #available(iOS 10.0, *) {

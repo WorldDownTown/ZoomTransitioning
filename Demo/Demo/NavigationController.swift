@@ -9,8 +9,7 @@
 import UIKit
 
 final class NavigationController: UINavigationController {
-
-    private let zoomNavigationControllerDelegate = ZoomNavigationControllerDelegate()
+    private let zoomNavigationControllerDelegate: ZoomNavigationControllerDelegate = .init()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

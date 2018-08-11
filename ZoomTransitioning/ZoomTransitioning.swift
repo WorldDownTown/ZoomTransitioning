@@ -9,7 +9,6 @@
 import UIKit
 
 public final class ZoomTransitioning: NSObject {
-
     static let transitionDuration: TimeInterval = 0.3
     private let source: ZoomTransitionSourceDelegate
     private let destination: ZoomTransitionDestinationDelegate
@@ -28,7 +27,6 @@ public final class ZoomTransitioning: NSObject {
 // MARK: -  UIViewControllerAnimatedTransitioning {
 
 extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
-
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return ZoomTransitioning.transitionDuration
     }
@@ -48,12 +46,12 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                 return
         }
 
-        let containerView = transitionContext.containerView
-        let transitioningImageView = transitioningPushImageView()
+        let containerView: UIView = transitionContext.containerView
+        let transitioningImageView: UIImageView = transitioningPushImageView()
 
         containerView.backgroundColor = sourceView.backgroundColor
-        sourceView.alpha = 1.0
-        destinationView.alpha = 0.0
+        sourceView.alpha = 1
+        destinationView.alpha = 0
 
         containerView.insertSubview(destinationView, belowSubview: sourceView)
         containerView.addSubview(transitioningImageView)
@@ -63,22 +61,22 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
 
         UIView.animate(
             withDuration: ZoomTransitioning.transitionDuration,
-            delay: 0.0,
+            delay: 0,
             options: .curveEaseOut,
             animations: {
-                sourceView.alpha = 0.0
-                destinationView.alpha = 1.0
+                sourceView.alpha = 0
+                destinationView.alpha = 1
                 transitioningImageView.frame = self.destination.transitionDestinationImageViewFrame(forward: self.forward)
             },
             completion: { _ in
-                sourceView.alpha = 1.0
-                transitioningImageView.alpha = 0.0
+                sourceView.alpha = 1
+                transitioningImageView.alpha = 0
                 transitioningImageView.removeFromSuperview()
 
                 self.source.transitionSourceDidEnd()
                 self.destination.transitionDestinationDidEnd(transitioningImageView: transitioningImageView)
 
-                let completed = !transitionContext.transitionWasCancelled
+                let completed: Bool = !transitionContext.transitionWasCancelled
                 transitionContext.completeTransition(completed)
         })
     }
@@ -90,12 +88,12 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
                 return
         }
 
-        let containerView = transitionContext.containerView
-        let transitioningImageView = transitioningPopImageView()
+        let containerView: UIView = transitionContext.containerView
+        let transitioningImageView: UIImageView = transitioningPopImageView()
 
         containerView.backgroundColor = destinationView.backgroundColor
-        destinationView.alpha = 1.0
-        sourceView.alpha = 0.0
+        destinationView.alpha = 1
+        sourceView.alpha = 0
 
         containerView.insertSubview(sourceView, belowSubview: destinationView)
         containerView.addSubview(transitioningImageView)
@@ -103,20 +101,20 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         source.transitionSourceWillBegin()
         destination.transitionDestinationWillBegin()
 
-        if transitioningImageView.frame.maxY < 0.0 {
+        if transitioningImageView.frame.maxY < 0 {
             transitioningImageView.frame.origin.y = -transitioningImageView.frame.height
         }
         UIView.animate(
             withDuration: ZoomTransitioning.transitionDuration,
-            delay: 0.0,
+            delay: 0,
             options: .curveEaseOut,
             animations: {
-                destinationView.alpha = 0.0
-                sourceView.alpha = 1.0
+                destinationView.alpha = 0
+                sourceView.alpha = 1
                 transitioningImageView.frame = self.source.transitionSourceImageViewFrame(forward: self.forward)
             },
             completion: { _ in
-                destinationView.alpha = 1.0
+                destinationView.alpha = 1
                 transitioningImageView.removeFromSuperview()
 
                 self.source.transitionSourceDidEnd()
@@ -133,14 +131,14 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
     }
 
     private func transitioningPushImageView() -> UIImageView {
-        let imageView = source.transitionSourceImageView()
-        let frame = source.transitionSourceImageViewFrame(forward: forward)
+        let imageView: UIImageView = source.transitionSourceImageView()
+        let frame: CGRect = source.transitionSourceImageViewFrame(forward: forward)
         return UIImageView(baseImageView: imageView, frame: frame)
     }
 
     private func transitioningPopImageView() -> UIImageView {
-        let imageView = source.transitionSourceImageView()
-        let frame = destination.transitionDestinationImageViewFrame(forward: forward)
+        let imageView: UIImageView = source.transitionSourceImageView()
+        let frame: CGRect = destination.transitionDestinationImageViewFrame(forward: forward)
         return UIImageView(baseImageView: imageView, frame: frame)
     }
 }
