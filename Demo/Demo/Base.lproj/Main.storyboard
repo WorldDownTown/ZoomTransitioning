@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8b0-8y-AK5">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8b0-8y-AK5">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="8b0-8y-AK5" customClass="NavigationController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6zB-BV-SzK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -31,7 +31,7 @@
             <objects>
                 <collectionViewController id="2k7-9i-0Wy" customClass="ImageListViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="0do-B4-G1a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="XQQ-Si-A6Q">
@@ -61,9 +61,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="wox-F2-iYO" id="kBM-nK-Q7y"/>
-                                    <segue destination="uxt-M5-3a0" kind="show" id="AmH-m9-Zud">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="uxt-M5-3a0" kind="show" id="AmH-m9-Zud"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -87,11 +85,11 @@
                         <viewControllerLayoutGuide type="bottom" id="qeh-TQ-JoE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YFZ-HJ-MvT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbC-hl-pWM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Onv-SQ-hIB">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -116,9 +114,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6B-ie-uED">
                                         <rect key="frame" x="100" y="530" width="175" height="175"/>
                                         <connections>
-                                            <segue destination="uxt-M5-3a0" kind="show" id="HTT-Yl-XIa">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="uxt-M5-3a0" kind="show" id="HTT-Yl-XIa"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WO0-ib-hWf">
@@ -138,9 +134,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFw-Bb-zCQ">
                                         <rect key="frame" x="100" y="985" width="175" height="175"/>
                                         <connections>
-                                            <segue destination="uXa-Hy-YlT" kind="show" id="L5V-hA-e4d">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="uXa-Hy-YlT" kind="show" id="L5V-hA-e4d"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xa3-z1-sgT">
@@ -208,11 +202,11 @@
                         <viewControllerLayoutGuide type="bottom" id="aSs-Fj-HiC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KZW-dU-QZD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s2R-f2-JTY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="s2R-f2-JTY" secondAttribute="height" multiplier="3:2" id="isW-o5-7AX"/>
                                 </constraints>
@@ -234,7 +228,4 @@
             <point key="canvasLocation" x="1879" y="463"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="AmH-m9-Zud"/>
-    </inferredMetricsTieBreakers>
 </document>
