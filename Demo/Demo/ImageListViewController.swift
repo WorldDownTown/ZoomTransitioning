@@ -59,6 +59,10 @@ extension ImageListViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - ZoomTransitionSourceDelegate
 
 extension ImageListViewController: ZoomTransitionSourceDelegate {
+    var animationDuration: TimeInterval {
+        return 0.4
+    }
+
     func transitionSourceImageView() -> UIImageView {
         return selectedImageView ?? UIImageView()
     }
@@ -79,4 +83,18 @@ extension ImageListViewController: ZoomTransitionSourceDelegate {
     func transitionSourceDidCancel() {
         selectedImageView?.isHidden = false
     }
+
+    // Uncomment method below if you customize the animation.
+/*
+    func zoomAnimation(animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
+        UIView.animate(
+            withDuration: animationDuration,
+            delay: 0,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 2,
+            options: .curveEaseInOut,
+            animations: animations,
+            completion: completion)
+    }
+ */
 }

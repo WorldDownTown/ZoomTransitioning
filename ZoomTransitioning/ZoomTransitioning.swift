@@ -28,7 +28,7 @@ public final class ZoomTransitioning: NSObject {
 
 extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return ZoomTransitioning.transitionDuration
+        return source.animationDuration
     }
 
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -59,15 +59,12 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         source.transitionSourceWillBegin()
         destination.transitionDestinationWillBegin()
 
-        UIView.animate(
-            withDuration: ZoomTransitioning.transitionDuration,
-            delay: 0,
-            options: .curveEaseOut,
+        source.zoomAnimation(
             animations: {
                 sourceView.alpha = 0
                 destinationView.alpha = 1
                 transitioningImageView.frame = self.destination.transitionDestinationImageViewFrame(forward: self.forward)
-            },
+        },
             completion: { _ in
                 sourceView.alpha = 1
                 transitioningImageView.alpha = 0
@@ -104,15 +101,12 @@ extension ZoomTransitioning: UIViewControllerAnimatedTransitioning {
         if transitioningImageView.frame.maxY < 0 {
             transitioningImageView.frame.origin.y = -transitioningImageView.frame.height
         }
-        UIView.animate(
-            withDuration: ZoomTransitioning.transitionDuration,
-            delay: 0,
-            options: .curveEaseOut,
+        source.zoomAnimation(
             animations: {
                 destinationView.alpha = 0
                 sourceView.alpha = 1
                 transitioningImageView.frame = self.source.transitionSourceImageViewFrame(forward: self.forward)
-            },
+        },
             completion: { _ in
                 destinationView.alpha = 1
                 transitioningImageView.removeFromSuperview()
