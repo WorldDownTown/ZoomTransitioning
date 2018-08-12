@@ -3,7 +3,7 @@
 [![Join the chat at https://gitter.im/WorldDownTown/ZoomTransitioning](https://badges.gitter.im/WorldDownTown/ZoomTransitioning.svg)](https://gitter.im/WorldDownTown/ZoomTransitioning?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![License](https://img.shields.io/:license-mit-blue.svg)](https://doge.mit-license.org)
-[![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat)](https://developer.apple.com/swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ZoomTransitioning.svg?style=flat)](http://cocoadocs.org/docsets/ZoomTransitioning/)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/ZoomTransitioning.svg)](http://cocoadocs.org/docsets/ZoomTransitioning/)
@@ -99,8 +99,8 @@ class NavigationController: UINavigationController {
 ```
 
 ## Requirements
-- Swift 3.0
-- iOS 8.0 or later
+- Swift 4.0
+- iOS 9.0 or later
 
 If you use Swift 2.2, use [1.3.0](https://github.com/WorldDownTown/ZoomTransitioning/releases/tag/1.3.0)
 
