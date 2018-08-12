@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'ZoomTransitioning'
-  s.version               = '1.4.1'
+  s.version               = '1.5.0'
   s.summary               = 'ZoomTransitioning provides a custom transition with image zooming animation.'
   s.description           = <<-DESC
                             ZoomTransitioning provides a custom transition with image zooming animation.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author                = { 'WorldDownTown' => 'WorldDownTown@gmail.com' }
   s.source                = { git: 'https://github.com/WorldDownTown/ZoomTransitioning.git', tag: s.version.to_s }
   s.social_media_url      = 'https://twitter.com/WorldDownTown'
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
   s.source_files          = 'ZoomTransitioning/*.swift'
   s.frameworks            = 'UIKit'
 end
