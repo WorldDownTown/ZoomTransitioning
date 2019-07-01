@@ -13,7 +13,7 @@
 `ZoomTransitioning` provides a custom transition with image zooming animation.
 When you use this library with `UINavigationController`, you can pop view controller with edge swiping.
 
-![demo](images/demo.gif)
+<img src="https://github.com/ivanvorobei/ZoomTransitioning/blob/master/images/demo.gif" width="280"/>
 
 ## Demo
 Run the demo project in the Demo directory without `carthage update` or `pod install`.
